@@ -3,6 +3,7 @@ create database susi_bd;
 
 use susi_bd;
 
+
 create table usuario_campus(
 	id int primary key auto_increment,
 	nome varchar(50) not null unique,
@@ -19,10 +20,6 @@ create table material(
 	indicador int references tipo_indicador(id)
 );
 
-create table tipo_movimentacao(
-	id int primary key auto_increment,
-	nome varchar(50) not null
-);
 
 create table movimentacao(
 	id int primary key auto_increment,
@@ -33,7 +30,24 @@ create table movimentacao(
 	depois int not null
 );
 
+
+create table tipo_movimentacao(
+	id int primary key auto_increment,
+	nome varchar(50) not null
+);
+
 create table tipo_indicador(
 	id int primary key auto_increment,
 	nome varchar(25)
 );
+
+
+
+insert into tipo_movimentacao(nome) values ("Consumo");
+insert into tipo_movimentacao(nome) values ("Deterioração");
+insert into tipo_movimentacao(nome) values ("Perda");
+insert into tipo_movimentacao(nome) values ("Aquisição");
+insert into tipo_movimentacao(nome) values ("Outra");
+
+insert into tipo_indicador(nome) values ("Excesso");
+insert into tipo_indicador(nome) values ("Carência");
