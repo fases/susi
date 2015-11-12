@@ -1,4 +1,4 @@
-
+<?php
 /*
 DAO da tabela de usuários.
 */
