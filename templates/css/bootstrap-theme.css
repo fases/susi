@@ -5923,3 +5923,8 @@ td.visible-print {
 .diretorios:hover {
   color: #34aadc;
 }
+
+#foto_perfil{
+  width: 30px;
+  height: 30px;
+}
