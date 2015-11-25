@@ -185,9 +185,31 @@
                                       <div class="form-group ">
                                           <label for="cname" class="control-label col-lg-2">Nome completo <span class="required">*</span></label>
                                           <div class="col-lg-10">
-                                              <input class="form-control" id="cname" name="fullname" minlength="5" type="text" required />
+                                              <input class="form-control" id="cname" name="nome" minlength="5" type="text" required />
                                           </div>
                                       </div>
+
+                                      <div class="form-group ">
+                                          <label for="ccpf" class="control-label col-lg-2">CPF <span class="required">*</span></label>
+                                          <div class="col-lg-10">
+                                              <input class="form-control" id="ccpf" name="cpf" type="text" placeholder="000.000.000-00" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required />
+                                          </div>
+                                      </div>
+                                      
+                                     <div class="form-group ">
+                                          <label for="cfone" class="control-label col-lg-2">Telefone <span class="required">*</span></label>
+                                          <div class="col-lg-10">
+                                              <input class="form-control" id="cfone" name="fone" type="text" placeholder="0000-0000" pattern="\d{4}\-\d{4}\" required />
+                                          </div>
+                                      </div>
+
+                                       <div class="form-group ">
+                                          <label for="ccell" class="control-label col-lg-2">Celular <span class="required">*</span></label>
+                                          <div class="col-lg-10">
+                                              <input class="form-control" id="ccell" name="cell" type="text" placeholder="90000-0000" pattern="\d{5}\-\d{4}\" required />
+                                          </div>
+                                      </div>
+
                                       <div class="form-group ">
                                           <label for="cemail" class="control-label col-lg-2">E-Mail <span class="required">*</span></label>
                                           <div class="col-lg-10">
@@ -196,9 +218,9 @@
                                       </div>
 
                                       <div class="form-group ">
-                                          <label for="password" class="control-label col-lg-2">Senha <span class="required">*</span></label>
+                                          <label for="cpassword" class="control-label col-lg-2">Senha <span class="required">*</span></label>
                                           <div class="col-lg-10">
-                                              <input class="form-control " id="password" name="password" type="password" />
+                                              <input class="form-control " id="cpassword" name="senha" type="password" />
                                           </div>
                                       </div>
 
