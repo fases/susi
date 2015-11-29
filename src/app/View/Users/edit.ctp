@@ -4,10 +4,11 @@
 		<legend><?php echo __('Edit User'); ?></legend>
 	<?php
 		echo $this->Form->input('id');
-		echo $this->Form->input('cpf');
+		echo $this->Form->input('name');
 		echo $this->Form->input('email');
-		echo $this->Form->input('phone');
 		echo $this->Form->input('password');
+		echo $this->Form->input('cpf');
+		echo $this->Form->input('phone');
 		echo $this->Form->input('user_type_id');
 		echo $this->Form->input('campus_id');
 	?>

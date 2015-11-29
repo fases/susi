@@ -7,6 +7,7 @@
 			<th><?php echo $this->Paginator->sort('lot'); ?></th>
 			<th><?php echo $this->Paginator->sort('validity'); ?></th>
 			<th><?php echo $this->Paginator->sort('status'); ?></th>
+			<th><?php echo $this->Paginator->sort('amount'); ?></th>
 			<th><?php echo $this->Paginator->sort('item_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('user_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('utilization_id'); ?></th>
@@ -21,6 +22,7 @@
 		<td><?php echo h($campusItem['CampusItem']['lot']); ?>&nbsp;</td>
 		<td><?php echo h($campusItem['CampusItem']['validity']); ?>&nbsp;</td>
 		<td><?php echo h($campusItem['CampusItem']['status']); ?>&nbsp;</td>
+		<td><?php echo h($campusItem['CampusItem']['amount']); ?>&nbsp;</td>
 		<td>
 			<?php echo $this->Html->link($campusItem['Item']['name'], array('controller' => 'items', 'action' => 'view', $campusItem['Item']['id'])); ?>
 		</td>

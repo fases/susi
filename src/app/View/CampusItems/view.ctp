@@ -21,6 +21,11 @@
 			<?php echo h($campusItem['CampusItem']['status']); ?>
 			&nbsp;
 		</dd>
+		<dt><?php echo __('Amount'); ?></dt>
+		<dd>
+			<?php echo h($campusItem['CampusItem']['amount']); ?>
+			&nbsp;
+		</dd>
 		<dt><?php echo __('Item'); ?></dt>
 		<dd>
 			<?php echo $this->Html->link($campusItem['Item']['name'], array('controller' => 'items', 'action' => 'view', $campusItem['Item']['id'])); ?>

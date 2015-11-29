@@ -7,6 +7,7 @@
 		echo $this->Form->input('lot');
 		echo $this->Form->input('validity');
 		echo $this->Form->input('status');
+		echo $this->Form->input('amount');
 		echo $this->Form->input('item_id');
 		echo $this->Form->input('user_id');
 		echo $this->Form->input('utilization_id');

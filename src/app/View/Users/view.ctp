@@ -6,9 +6,9 @@
 			<?php echo h($user['User']['id']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Cpf'); ?></dt>
+		<dt><?php echo __('Name'); ?></dt>
 		<dd>
-			<?php echo h($user['User']['cpf']); ?>
+			<?php echo h($user['User']['name']); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Email'); ?></dt>
@@ -16,14 +16,19 @@
 			<?php echo h($user['User']['email']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Phone'); ?></dt>
-		<dd>
-			<?php echo h($user['User']['phone']); ?>
-			&nbsp;
-		</dd>
 		<dt><?php echo __('Password'); ?></dt>
 		<dd>
 			<?php echo h($user['User']['password']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Cpf'); ?></dt>
+		<dd>
+			<?php echo h($user['User']['cpf']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Phone'); ?></dt>
+		<dd>
+			<?php echo h($user['User']['phone']); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('User Type'); ?></dt>
@@ -62,6 +67,7 @@
 		<th><?php echo __('Lot'); ?></th>
 		<th><?php echo __('Validity'); ?></th>
 		<th><?php echo __('Status'); ?></th>
+		<th><?php echo __('Amount'); ?></th>
 		<th><?php echo __('Item Id'); ?></th>
 		<th><?php echo __('User Id'); ?></th>
 		<th><?php echo __('Utilization Id'); ?></th>
@@ -74,6 +80,7 @@
 			<td><?php echo $campusItem['lot']; ?></td>
 			<td><?php echo $campusItem['validity']; ?></td>
 			<td><?php echo $campusItem['status']; ?></td>
+			<td><?php echo $campusItem['amount']; ?></td>
 			<td><?php echo $campusItem['item_id']; ?></td>
 			<td><?php echo $campusItem['user_id']; ?></td>
 			<td><?php echo $campusItem['utilization_id']; ?></td>
