@@ -13,9 +13,7 @@ O sistema visa suprir as necessidades dos servidores dos setores de saúde do In
 Diante deste cenário problemático, foi elaborada a ideia de construir um sistema transparente e unificado entre os campi, onde cada um administraria seu próprio estoque mas também divulgaria suas possíveis trocas intercampi. Além disso, a situação dos estoques seria disponível publicamente de forma democrática.
 </p>
 
-<h3>
-Licenças
-</h3>
+<h3>Licenças</h3>
 
 <p>
 O sistema está todo sob a licença The MIT License, seja de autoria dos <a href="LICENSE">colaboradores</a> ou, no caso dos arquivos em extensão .css que referenciam o framework Bootstrap, da <a href="https://github.com/twbs/bootstrap">Twitter Inc</a>.
