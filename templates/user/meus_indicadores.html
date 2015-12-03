@@ -8,7 +8,7 @@
     <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
     <link rel="shortcut icon" href="../img/favicon.png">
 
-    <title>Início | SUSI</title>
+    <title>Meus indicadores | SUSI</title>
 
     <!-- Bootstrap CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -180,33 +180,100 @@
       <!--sidebar end-->
 
       <!--main content start-->
+
+
       <section id="main-content">
           <section class="wrapper">
             <div class="row">
               <div class="col-lg-12">
                 <ol class="breadcrumb">
                   <li><i class="fa fa-home"></i><a href="index.html" class="diretorios">Início</a></li>
+                  <li><i class="fa fa-file-text"></i><a href="meus_indicadores.html" class="diretorios">Meus indicadores</a></li>
                 </ol>
               </div>
             </div>
               <!-- page start-->
+              <div class="row">
+                  <div class="col-lg-12">
+                      <section class="panel">
+                          <header class="panel-heading">
+                              <h1>Adicionar indicador</h1>
+                          </header>
+                          <div class="panel-body">
+                              <div class="form">
+                                  <form class="form-validate form-horizontal" id="feedback_form" method="get" action="">
+                                      
+                                      <div class="form-group ">
+                                          <label for="cname" class="control-label col-lg-2">Nome <span class="required">*</span></label>
+                                          <div class="col-lg-4">
+                                              <input class="form-control" id="cname" name="nome_item" type="text" required />
+                                          </div>
+                                      </div>
+
+                                       <div class="form-group">
+                                          <label class="control-label col-lg-2" for="inputSuccess">Tipo</label>
+                                          <div class="col-lg-2">
+                                              <select class="form-control m-bot15">
+                                                  <option>Carência</option>
+                                                  <option>Excedência</option>
+                                              </select>
+                                          </div>
+                                       </div>
+
+                                      <div class="form-group">
+                                          <label class="control-label col-lg-2" for="inputSuccess">Câmpus</label>
+                                          <div class="col-lg-4">
+                                              <select class="form-control m-bot15">
+                                                  <option>Apodi</option>
+                                                  <option>Caicó</option>
+                                                  <option>Canguaretama</option>
+                                                  <option>Ceará-Mirim</option>
+                                                  <option>Currais Novos</option>
+                                                  <option>Ipanguaçu</option>
+                                                  <option>João Câmara</option>
+                                                  <option>Lajes</option>
+                                                  <option>Macau</option>
+                                                  <option>Mossoró</option>
+                                                  <option>Natal - Central</option>
+                                                  <option>Natal - Cidade Alta</option>
+                                                  <option>Natal - Zona Norte</option>
+                                                  <option>Nova Cruz</option>
+                                                  <option>Parelhas</option>
+                                                  <option>Pau dos Ferros</option>
+                                                  <option>Santa Cruz</option>
+                                                  <option>São Gonçalo do Amarante</option>
+                                                  <option>São Paulo do Potengi</option>
+                                              </select>
+                                          </div>
+                                        </div>
+
+                                      <div class="form-group">
+                                          <div class="col-lg-offset-2 col-lg-10">
+                                              <button class="btn btn-primary" type="submit">Adicionar</button>
+                                          </div>
+                                      </div>
+                                  </form>
+                              </div>
+                          </div>
+                      </section>
+                  </div>
+              </div>  
               <div>
                 <!--<div class="col-sm-3">
                   <img src="img/danger_logo.jpg"/>
                   <i class="fa fa-exclamation-triangle fa-5x"></i>-->
                 <!--</div>-->
-                <div class="col-sm-12">
+                <div class="col-sm-6">
                   <section class="panel">
                     <header class="panel-heading">
-                      <h1>Medicações vencidas</h1>
+                      <h1>Carência</h1>
                     </header>
                     <table class="table col-sm-12">
                       <thead>
                         <tr>
                           <th>#</th>
-                          <th>Medicamento</th>
-                          <th>Quantidade</th>
-                          <th>Data</th>
+                          <th>Item</th>
+                          <th>Campus</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -214,43 +281,30 @@
                           <td></td>
                           <td></td>
                           <td></td>
-                          <td></td>
+                          <td><a class="btn btn-danger remover" href="" title="remover">Remover</a></td>
                         </tr>
                         <tr class="danger">
                           <td></td>
                           <td></td>
                           <td></td>
-                          <td></td>
-                        </tr>
-                        <tr class="danger">
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                        </tr>
-                        <tr class="danger">
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
+                          <td><a class="btn btn-danger remover" href="" title="remover">Remover</a></td>
                         </tr>
                       </tbody>
                     </table>
                   </section>
                 </div>
               </div>
-              <div class="col-sm-12">
+              <div class="col-sm-6">
                   <section class="panel">
                     <header class="panel-heading">
-                      <h1>Medicações prestes a vencer</h1>
+                      <h1>Excedência</h1>
                     </header>
                     <table class="table col-sm-12">
                       <thead>
                         <tr>
                           <th>#</th>
-                          <th>Medicamento</th>
-                          <th>Quantidade</th>
-                          <th>Data</th>
+                          <th>Item</th>
+                          <th>Campus</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -258,25 +312,13 @@
                           <td></td>
                           <td></td>
                           <td></td>
-                          <td></td>
+                          <td><a class="btn btn-danger remover" href="" title="remover">Remover</a></td>
                         </tr>
                         <tr class="warning">
                           <td></td>
                           <td></td>
                           <td></td>
-                          <td></td>
-                        </tr>
-                        <tr class="warning">
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                        </tr>
-                        <tr class="warning">
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
+                          <td><a class="btn btn-danger remover" href="" title="remover">Remover</a></td>
                         </tr>
                       </tbody>
                     </table>

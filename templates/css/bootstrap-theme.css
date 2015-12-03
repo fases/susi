@@ -5928,3 +5928,7 @@ td.visible-print {
   width: 30px;
   height: 30px;
 }
+
+.remover {
+  float: right;
+}
