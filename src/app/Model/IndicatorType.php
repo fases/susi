@@ -1,18 +1,11 @@
 <?php
 App::uses('AppModel', 'Model');
 /**
- * ItemDetail Model
+ * IndicatorType Model
  *
- * @property CampusItem $CampusItem
+ * @property Indicator $Indicator
  */
-class ItemDetail extends AppModel {
-
-/**
- * Display field
- *
- * @var string
- */
-	public $displayField = 'name';
+class IndicatorType extends AppModel {
 
 /**
  * Validation rules
@@ -40,9 +33,9 @@ class ItemDetail extends AppModel {
  * @var array
  */
 	public $hasMany = array(
-		'CampusItem' => array(
-			'className' => 'CampusItem',
-			'foreignKey' => 'item_detail_id',
+		'Indicator' => array(
+			'className' => 'Indicator',
+			'foreignKey' => 'indicator_type_id',
 			'dependent' => false,
 			'conditions' => '',
 			'fields' => '',

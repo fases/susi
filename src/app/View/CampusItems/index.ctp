@@ -6,12 +6,8 @@
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('lot'); ?></th>
 			<th><?php echo $this->Paginator->sort('validity'); ?></th>
-			<th><?php echo $this->Paginator->sort('status'); ?></th>
-			<th><?php echo $this->Paginator->sort('amount'); ?></th>
 			<th><?php echo $this->Paginator->sort('item_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('user_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('utilization_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('item_detail_id'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	</thead>
@@ -21,19 +17,11 @@
 		<td><?php echo h($campusItem['CampusItem']['id']); ?>&nbsp;</td>
 		<td><?php echo h($campusItem['CampusItem']['lot']); ?>&nbsp;</td>
 		<td><?php echo h($campusItem['CampusItem']['validity']); ?>&nbsp;</td>
-		<td><?php echo h($campusItem['CampusItem']['status']); ?>&nbsp;</td>
-		<td><?php echo h($campusItem['CampusItem']['amount']); ?>&nbsp;</td>
 		<td>
 			<?php echo $this->Html->link($campusItem['Item']['name'], array('controller' => 'items', 'action' => 'view', $campusItem['Item']['id'])); ?>
 		</td>
 		<td>
-			<?php echo $this->Html->link($campusItem['User']['email'], array('controller' => 'users', 'action' => 'view', $campusItem['User']['id'])); ?>
-		</td>
-		<td>
-			<?php echo $this->Html->link($campusItem['Utilization']['name'], array('controller' => 'utilizations', 'action' => 'view', $campusItem['Utilization']['id'])); ?>
-		</td>
-		<td>
-			<?php echo $this->Html->link($campusItem['ItemDetail']['name'], array('controller' => 'item_details', 'action' => 'view', $campusItem['ItemDetail']['id'])); ?>
+			<?php echo $this->Html->link($campusItem['User']['name'], array('controller' => 'users', 'action' => 'view', $campusItem['User']['id'])); ?>
 		</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $campusItem['CampusItem']['id'])); ?>
@@ -66,9 +54,7 @@
 		<li><?php echo $this->Html->link(__('New Item'), array('controller' => 'items', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Users'), array('controller' => 'users', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New User'), array('controller' => 'users', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Utilizations'), array('controller' => 'utilizations', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Utilization'), array('controller' => 'utilizations', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Item Details'), array('controller' => 'item_details', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Item Detail'), array('controller' => 'item_details', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Logs'), array('controller' => 'logs', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Log'), array('controller' => 'logs', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

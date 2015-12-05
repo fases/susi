@@ -1,18 +1,11 @@
 <?php
 App::uses('AppModel', 'Model');
 /**
- * Utilization Model
+ * DealType Model
  *
- * @property CampusItem $CampusItem
+ * @property Log $Log
  */
-class Utilization extends AppModel {
-
-/**
- * Display field
- *
- * @var string
- */
-	public $displayField = 'name';
+class DealType extends AppModel {
 
 /**
  * Validation rules
@@ -40,9 +33,9 @@ class Utilization extends AppModel {
  * @var array
  */
 	public $hasMany = array(
-		'CampusItem' => array(
-			'className' => 'CampusItem',
-			'foreignKey' => 'utilization_id',
+		'Log' => array(
+			'className' => 'Log',
+			'foreignKey' => 'deal_type_id',
 			'dependent' => false,
 			'conditions' => '',
 			'fields' => '',

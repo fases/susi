@@ -5,8 +5,6 @@ App::uses('AppController', 'Controller');
  *
  * @property ItemType $ItemType
  * @property PaginatorComponent $Paginator
- * @property FlashComponent $Flash
- * @property SessionComponent $Session
  */
 class ItemTypesController extends AppController {
 
@@ -15,7 +13,7 @@ class ItemTypesController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator', 'Flash', 'Session');
+	public $components = array('Paginator');
 
 /**
  * index method

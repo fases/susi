@@ -5,8 +5,6 @@ App::uses('AppController', 'Controller');
  *
  * @property CampusItem $CampusItem
  * @property PaginatorComponent $Paginator
- * @property FlashComponent $Flash
- * @property SessionComponent $Session
  */
 class CampusItemsController extends AppController {
 
@@ -15,7 +13,7 @@ class CampusItemsController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator', 'Flash', 'Session');
+	public $components = array('Paginator');
 
 /**
  * index method
@@ -59,9 +57,7 @@ class CampusItemsController extends AppController {
 		}
 		$items = $this->CampusItem->Item->find('list');
 		$users = $this->CampusItem->User->find('list');
-		$utilizations = $this->CampusItem->Utilization->find('list');
-		$itemDetails = $this->CampusItem->ItemDetail->find('list');
-		$this->set(compact('items', 'users', 'utilizations', 'itemDetails'));
+		$this->set(compact('items', 'users'));
 	}
 
 /**
@@ -88,9 +84,7 @@ class CampusItemsController extends AppController {
 		}
 		$items = $this->CampusItem->Item->find('list');
 		$users = $this->CampusItem->User->find('list');
-		$utilizations = $this->CampusItem->Utilization->find('list');
-		$itemDetails = $this->CampusItem->ItemDetail->find('list');
-		$this->set(compact('items', 'users', 'utilizations', 'itemDetails'));
+		$this->set(compact('items', 'users'));
 	}
 
 /**

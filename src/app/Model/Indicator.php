@@ -1,13 +1,13 @@
 <?php
 App::uses('AppModel', 'Model');
 /**
- * CampusItem Model
+ * Indicator Model
  *
  * @property Item $Item
- * @property User $User
- * @property Log $Log
+ * @property IndicatorType $IndicatorType
+ * @property Campus $Campus
  */
-class CampusItem extends AppModel {
+class Indicator extends AppModel {
 
 /**
  * Validation rules
@@ -15,7 +15,7 @@ class CampusItem extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'lot' => array(
+		'item_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -25,9 +25,9 @@ class CampusItem extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'validity' => array(
-			'date' => array(
-				'rule' => array('date'),
+		'indicator_type_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -35,7 +35,7 @@ class CampusItem extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'item_id' => array(
+		'campus_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -62,34 +62,19 @@ class CampusItem extends AppModel {
 			'fields' => '',
 			'order' => ''
 		),
-		'User' => array(
-			'className' => 'User',
-			'foreignKey' => 'user_id',
+		'IndicatorType' => array(
+			'className' => 'IndicatorType',
+			'foreignKey' => 'indicator_type_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
+		'Campus' => array(
+			'className' => 'Campus',
+			'foreignKey' => 'campus_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		)
 	);
-
-/**
- * hasMany associations
- *
- * @var array
- */
-	public $hasMany = array(
-		'Log' => array(
-			'className' => 'Log',
-			'foreignKey' => 'campus_item_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		)
-	);
-
 }
