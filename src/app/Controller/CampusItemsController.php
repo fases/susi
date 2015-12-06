@@ -109,4 +109,15 @@ class CampusItemsController extends AppController {
         }
         return $this->redirect(array('action' => 'index'));
     }
+
+    public function expireds() {
+        $this->recursive = 0;
+        $this->Paginator->settings = array(
+            'conditions' => array(
+                'Campus.id' => $this->Auth->user('campus_id'),
+                'CampusItem.validity <' => date('Y-m-d', strtotime('now'))
+            )
+        );
+        $this->set('campusItems', $this->Paginator->paginate());
+    }
 }
