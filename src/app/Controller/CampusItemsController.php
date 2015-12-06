@@ -120,4 +120,16 @@ class CampusItemsController extends AppController {
         );
         $this->set('campusItems', $this->Paginator->paginate());
     }
+
+    public function almostExpired() {
+        $this->recursive = 0;
+        $this->Paginator->settings = array(
+            'conditions' => array(
+                'Campus.id' => $this->Auth->user('campus_id'),
+                'CampusItem.validity <=' => date('Y-m-d', strtotime('+1 month')),
+                'CampusItem.validity >' => date('Y-m-d', strtotime('now'))
+            )
+        );
+        $this->set('campusItems', $this->Paginator->paginate());
+    }
 }
