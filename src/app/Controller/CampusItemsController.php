@@ -22,18 +22,6 @@ class CampusItemsController extends AppController {
  */
     public function index() {
         $this->recursive = 0;
-        $this->CampusItem->bindModel(
-            array(
-                'belongsTo' => array(
-                    'Campus' => array(
-                        'className'  => 'Campus',
-                        'foreignKey' => false,
-                        'conditions' => 'Campus.id = User.campus_id',
-                    )
-                )
-            )
-        );
-
         $this->Paginator->settings = array(
             'conditions' => array('Campus.id' => $this->Auth->user('campus_id')));
         $this->set('campusItems', $this->Paginator->paginate());

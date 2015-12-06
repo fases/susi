@@ -68,12 +68,17 @@ class CampusItem extends AppModel {
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
-		)
-	);
+        ),
+        'Campus' => array(
+            'className'  => 'Campus',
+            'foreignKey' => false,
+            'conditions' => 'Campus.id = User.campus_id',
+        )
+    );
 
-/**
- * hasMany associations
- *
+    /**
+     * hasMany associations
+     *
  * @var array
  */
 	public $hasMany = array(
