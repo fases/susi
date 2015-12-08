@@ -6,12 +6,8 @@
 		echo $this->Form->input('id');
 		echo $this->Form->input('lot');
 		echo $this->Form->input('validity');
-		echo $this->Form->input('status');
-		echo $this->Form->input('amount');
 		echo $this->Form->input('item_id');
 		echo $this->Form->input('user_id');
-		echo $this->Form->input('utilization_id');
-		echo $this->Form->input('item_detail_id');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
@@ -26,9 +22,7 @@
 		<li><?php echo $this->Html->link(__('New Item'), array('controller' => 'items', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Users'), array('controller' => 'users', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New User'), array('controller' => 'users', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Utilizations'), array('controller' => 'utilizations', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Utilization'), array('controller' => 'utilizations', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Item Details'), array('controller' => 'item_details', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Item Detail'), array('controller' => 'item_details', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Logs'), array('controller' => 'logs', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Log'), array('controller' => 'logs', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

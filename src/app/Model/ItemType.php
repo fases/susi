@@ -8,13 +8,6 @@ App::uses('AppModel', 'Model');
 class ItemType extends AppModel {
 
 /**
- * Display field
- *
- * @var string
- */
-	public $displayField = 'name';
-
-/**
  * Validation rules
  *
  * @var array

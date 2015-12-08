@@ -30,10 +30,11 @@
 	<table cellpadding = "0" cellspacing = "0">
 	<tr>
 		<th><?php echo __('Id'); ?></th>
-		<th><?php echo __('Cpf'); ?></th>
+		<th><?php echo __('Name'); ?></th>
 		<th><?php echo __('Email'); ?></th>
-		<th><?php echo __('Phone'); ?></th>
 		<th><?php echo __('Password'); ?></th>
+		<th><?php echo __('Cpf'); ?></th>
+		<th><?php echo __('Phone'); ?></th>
 		<th><?php echo __('User Type Id'); ?></th>
 		<th><?php echo __('Campus Id'); ?></th>
 		<th class="actions"><?php echo __('Actions'); ?></th>
@@ -41,10 +42,11 @@
 	<?php foreach ($userType['User'] as $user): ?>
 		<tr>
 			<td><?php echo $user['id']; ?></td>
-			<td><?php echo $user['cpf']; ?></td>
+			<td><?php echo $user['name']; ?></td>
 			<td><?php echo $user['email']; ?></td>
-			<td><?php echo $user['phone']; ?></td>
 			<td><?php echo $user['password']; ?></td>
+			<td><?php echo $user['cpf']; ?></td>
+			<td><?php echo $user['phone']; ?></td>
 			<td><?php echo $user['user_type_id']; ?></td>
 			<td><?php echo $user['campus_id']; ?></td>
 			<td class="actions">

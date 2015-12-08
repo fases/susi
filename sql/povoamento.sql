@@ -26,3 +26,15 @@ INSERT INTO campuses(name) VALUES ('São Paulo do Potengi');
 
 # Povoamento dos tipos de usuário
 INSERT INTO user_types(name) VALUES ('Administrador');
+
+Povoamento dos itens
+INSERT INTO items(name, item_type_id) VALUES ('1');
+
+Povoamento dos tipos de utilizações dos itens
+INSERT INTO deal_types(name) VALUES ('Consumo');
+INSERT INTO deal_types(name) VALUES ('Deterioração');
+INSERT INTO deal_types(name) VALUES ('Doação');
+INSERT INTO deal_types(name) VALUES ('Aquisição');
+
+INSERT INTO indicator_types(name) VALUES ('Carência');
+INSERT INTO indicator_types(name) VALUES ('Excedência');

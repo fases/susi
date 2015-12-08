@@ -1,13 +1,12 @@
 <?php
 App::uses('AppModel', 'Model');
 /**
- * CampusItem Model
+ * Log Model
  *
- * @property Item $Item
- * @property User $User
- * @property Log $Log
+ * @property CampusItem $CampusItem
+ * @property DealType $DealType
  */
-class CampusItem extends AppModel {
+class Log extends AppModel {
 
 /**
  * Validation rules
@@ -15,7 +14,7 @@ class CampusItem extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'lot' => array(
+		'amount' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -25,9 +24,9 @@ class CampusItem extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'validity' => array(
-			'date' => array(
-				'rule' => array('date'),
+		'campus_item_id' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -35,7 +34,7 @@ class CampusItem extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'item_id' => array(
+		'deal_type_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -55,46 +54,19 @@ class CampusItem extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'Item' => array(
-			'className' => 'Item',
-			'foreignKey' => 'item_id',
+		'CampusItem' => array(
+			'className' => 'CampusItem',
+			'foreignKey' => 'campus_item_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		),
-		'User' => array(
-			'className' => 'User',
-			'foreignKey' => 'user_id',
+		'DealType' => array(
+			'className' => 'DealType',
+			'foreignKey' => 'deal_type_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
-        ),
-        'Campus' => array(
-            'className'  => 'Campus',
-            'foreignKey' => false,
-            'conditions' => 'Campus.id = User.campus_id',
-        )
-    );
-
-    /**
-     * hasMany associations
-     *
- * @var array
- */
-	public $hasMany = array(
-		'Log' => array(
-			'className' => 'Log',
-			'foreignKey' => 'campus_item_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
 		)
 	);
-
 }

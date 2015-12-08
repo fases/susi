@@ -1,24 +1,22 @@
-<div class="campuses index">
-	<h2><?php echo __('Campuses'); ?></h2>
+<div class="indicatorTypes index">
+	<h2><?php echo __('Indicator Types'); ?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<thead>
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('name'); ?></th>
-			<th><?php echo $this->Paginator->sort('phone'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	</thead>
 	<tbody>
-	<?php foreach ($campuses as $campus): ?>
+	<?php foreach ($indicatorTypes as $indicatorType): ?>
 	<tr>
-		<td><?php echo h($campus['Campus']['id']); ?>&nbsp;</td>
-		<td><?php echo h($campus['Campus']['name']); ?>&nbsp;</td>
-		<td><?php echo h($campus['Campus']['phone']); ?>&nbsp;</td>
+		<td><?php echo h($indicatorType['IndicatorType']['id']); ?>&nbsp;</td>
+		<td><?php echo h($indicatorType['IndicatorType']['name']); ?>&nbsp;</td>
 		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $campus['Campus']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $campus['Campus']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $campus['Campus']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $campus['Campus']['id']))); ?>
+			<?php echo $this->Html->link(__('View'), array('action' => 'view', $indicatorType['IndicatorType']['id'])); ?>
+			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $indicatorType['IndicatorType']['id'])); ?>
+			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $indicatorType['IndicatorType']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $indicatorType['IndicatorType']['id']))); ?>
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -41,10 +39,8 @@
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('New Campus'), array('action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(__('New Indicator Type'), array('action' => 'add')); ?></li>
 		<li><?php echo $this->Html->link(__('List Indicators'), array('controller' => 'indicators', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Indicator'), array('controller' => 'indicators', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Users'), array('controller' => 'users', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New User'), array('controller' => 'users', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

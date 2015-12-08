@@ -3,16 +3,10 @@ App::uses('AppModel', 'Model');
 /**
  * Campus Model
  *
+ * @property Indicator $Indicator
  * @property User $User
  */
 class Campus extends AppModel {
-
-/**
- * Display field
- *
- * @var string
- */
-	public $displayField = 'name';
 
 /**
  * Validation rules
@@ -31,8 +25,8 @@ class Campus extends AppModel {
 			),
 		),
 		'phone' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
+			'notBlank' => array(
+				'rule' => array('notBlank'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -50,6 +44,19 @@ class Campus extends AppModel {
  * @var array
  */
 	public $hasMany = array(
+		'Indicator' => array(
+			'className' => 'Indicator',
+			'foreignKey' => 'campus_id',
+			'dependent' => false,
+			'conditions' => '',
+			'fields' => '',
+			'order' => '',
+			'limit' => '',
+			'offset' => '',
+			'exclusive' => '',
+			'finderQuery' => '',
+			'counterQuery' => ''
+		),
 		'User' => array(
 			'className' => 'User',
 			'foreignKey' => 'campus_id',
