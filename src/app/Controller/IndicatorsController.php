@@ -46,6 +46,7 @@ class IndicatorsController extends AppController {
  * @return void
  */
 	public function add() {
+        $this->layout = 'userpage';
 		if ($this->request->is('post')) {
 			$this->Indicator->create();
 			if ($this->Indicator->save($this->request->data)) {
