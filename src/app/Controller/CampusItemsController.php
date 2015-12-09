@@ -110,7 +110,8 @@ class CampusItemsController extends AppController {
         return $this->redirect(array('action' => 'index'));
     }
 
-    public function expireds() {
+    private function expireds() {
+        $this->layout = 'userpage';
         $this->recursive = 0;
         $this->Paginator->settings = array(
             'conditions' => array(
@@ -118,11 +119,10 @@ class CampusItemsController extends AppController {
                 'CampusItem.validity <' => date('Y-m-d', strtotime('now'))
             )
         );
-        $this->set('campusItems', $this->Paginator->paginate());
+        return $this->Paginator->paginate();
     }
 
-    public function almostExpired() {
-        $this->recursive = 0;
+    private function almostExpireds() {
         $this->Paginator->settings = array(
             'conditions' => array(
                 'Campus.id' => $this->Auth->user('campus_id'),
@@ -130,6 +130,15 @@ class CampusItemsController extends AppController {
                 'CampusItem.validity >' => date('Y-m-d', strtotime('now'))
             )
         );
-        $this->set('campusItems', $this->Paginator->paginate());
+        return $this->Paginator->paginate();
+    }
+
+    public function show() {
+        $this->layout = 'userpage';
+        $this->recursive = 0;
+        $expireds = $this->expireds();
+        $almostExpireds = $this->almostExpireds();
+        $this->set('expireds', $expireds);
+        $this->set('almostExpireds', $almostExpireds);
     }
 }
