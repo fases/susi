@@ -1,9 +1,13 @@
-          <section class="wrapper">
+                <!--<div class="col-sm-3">
+                  <img src="img/danger_logo.jpg"/>
+                  <i class="fa fa-exclamation-triangle fa-5x"></i>-->
+                <!--</div>-->
+                          <section class="wrapper">
             <div class="row">
               <div class="col-lg-12">
                 <ol class="breadcrumb">
                   <li><i class="fa fa-home"></i><a href="index.html" class="diretorios">Início</a></li>
-                  <li><i class="fa fa-file-text"></i><a href="meus_indicadores.html" class="diretorios">Adicionar indicador</a></li>
+                  <li><i class="fa fa-file-text"></i><a href="meus_indicadores.html" class="diretorios">Meus indicadores</a></li>
                 </ol>
               </div>
             </div>
@@ -80,3 +84,74 @@
                       </section>
                   </div>
               </div>
+                
+                
+                <div class="col-sm-6">
+                  <section class="panel">
+                    <header class="panel-heading">
+                      <h1>Carência</h1>
+                    </header>
+                    <table class="table col-sm-12">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Item</th>
+                          <th>Campus</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                       <?php foreach ($carencia as $carente): ?>
+                        <tr class="danger">
+                          <td><?php echo h($carente['Indicator']['id']); ?>&nbsp;</td>
+                          <td>
+			<?php echo $this->Html->link($carente['Item']['name'], array('controller' => 'items', 'action' => 'view', $carente['Item']['id'])); ?>
+		</td>
+                        <td>
+			<?php echo $this->Html->link($carente['Campus']['name'], array('controller' => 'campuses', 'action' => 'view', $carente['Campus']['id'])); ?>
+		</td>
+                          <td><a class="btn btn-danger remover" href="" title="remover">Remover</a></td>
+                        </tr>
+                        <?php endforeach; ?>
+                        
+                      </tbody>
+                    </table>
+                  </section>
+                </div>
+              </div>
+              
+              
+              <div class="col-sm-6">
+                  <section class="panel">
+                    <header class="panel-heading">
+                      <h1>Excedência</h1>
+                    </header>
+                    <table class="table col-sm-12">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Item</th>
+                          <th>Campus</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                       <?php foreach ($excedencia as $excedente): ?>
+                        <tr class="warning">
+                           <td><?php echo h($excedente['Indicator']['id']); ?>&nbsp;</td>
+                          <td>
+			<?php echo $this->Html->link($excedente['Item']['name'], array('controller' => 'items', 'action' => 'view', $excedente['Item']['id'])); ?>
+		</td>
+                        <td>
+			<?php echo $this->Html->link($excedente['Campus']['name'], array('controller' => 'campuses', 'action' => 'view', $excedente['Campus']['id'])); ?>
+		</td>
+                          <td><a class="btn btn-danger remover" href="" title="remover">Remover</a></td>
+                        </tr>
+                        <?php endforeach; ?>
+                      </tbody>
+                    </table>
+                  </section>
+                </div>
+              </div>
+            <!-- page end-->
+          </section>
