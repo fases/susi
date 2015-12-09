@@ -5932,3 +5932,11 @@ td.visible-print {
 .remover {
   float: right;
 }
+
+.link-panel-body {
+  color: #06F;
+}
+
+.link-panel-body:hover {
+  color: #0C6;
+}

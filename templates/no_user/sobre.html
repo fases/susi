@@ -6,9 +6,9 @@
     <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
     <meta name="author" content="GeeksLabs">
     <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
-    <link rel="shortcut icon" href="../img/favicon.png">
+    <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>Relatórios | SUSI</title>
+    <title>Sobre | SUSI</title>
 
     <!-- Bootstrap CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -41,8 +41,8 @@
                 <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
             </div>
 
-             <!--logo start-->
-            <a href="index.html" class="logo">SUSI</a>
+            <!--logo start-->
+            <a href="relatorios_nouser.html" class="logo">SUSI</a>
             <!--logo end-->
 
 
@@ -58,54 +58,21 @@
                 <!--  search form end -->                
             </div>
 
+
             <div class="top-nav notification-row">
                 <!-- notificatoin dropdown start-->
                 <ul class="nav pull-right top-menu">
-
-                    <!-- task notificatoin end -->
-                    <!-- inbox notificatoin start-->
-                    <li id="mail_notificatoin_bar" class="dropdown" >
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <i class="icon-envelope-l"></i>
-                            <!--<span class="badge bg-important">1</span>-->
-                        </a>
-                        <ul class="dropdown-menu extended inbox">
-                          <!--<div class="notify-arrow notify-arrow-blue"></div>
-                            <li>
-                                <p class="blue">Você tem novas mensagens</p>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="photo"><img alt="avatar" src="./img/avatar-mini4.jpg"></span>
-                                    <span class="subject">
-                                    <span class="from">IFRN - SGA</span>
-                                    <span class="time">1 dia</span>
-                                    </span>
-                                    <span>
-                                        Preciso de dipirona.
-                                    </span>
-                                </a>
-                            </li>-->
-                            <li>
-                                <a href="#">Ver todas as mensagens</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- alert notification end-->
                     <!-- user login dropdown start-->
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="profile-ava">
-                                <img alt="" src="" id="foto_perfil">
+                                <img alt="" src="../img/nouser.jpg" id="foto_perfil">
                             </span>
-                            <span class="username"></span> <!--nome do usuário-->
+                            <span class="username">Usuário Comum</span>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended">
                             <div class="log-arrow-up"></div>
-                            <li class="eborder-top">
-                                <a href="#"><i class="icon_profile"></i> Perfil</a>
-                            </li>
                             <li class="eborder-top">
                                 <a href="../login.html"><i class="icon_key_alt"></i> Sair</a>
                             </li>
@@ -124,32 +91,18 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu">
                   <li class="">
-                      <a class="" href="index.html">
+                      <a class="" href="relatorios_nouser.html">
                           <i class="icon_house_alt"></i>
                           <span>Início</span>
                       </a>
                   </li>
 
                   <li class="sub-menu">
-                      <a href="cadastrar_usuarios.html" class="">
-                          <i class="fa fa-plus-square-o"></i>
-                          <span>Cadastrar Usuários</span>
-                      </a>
-                  </li>
-
-                  <li class="sub-menu">
-                      <a href="relatorios_adm.html" class="">
+                      <a href="relatorios_nouser.html" class="">
                           <i class="fa fa-file-text-o"></i>
                           <span>Relatórios</span>
                       </a>
                   </li>
-                  
-                  <!--<li class="sub-menu">
-                      <a href="#" class="">
-                          <i class="fa fa-hdd-o"></i>
-                          <span>Backup de dados</span>
-                      </a>
-                  </li>-->
 
                   <li class="sidebar-menu">
                       <a class="" href="sobre.html">
@@ -171,11 +124,44 @@
               <div class="col-lg-12">
                 <ol class="breadcrumb">
                   <li><i class="fa fa-home"></i><a href="#" class="diretorios">Início</a></li>
-                  <li><i class="fa fa-file-text"></i><a href="relatorios_adm.html" class="diretorios">Relatórios</a></li>
+                  <li><i class="fa fa-file-text"></i><a href="sobre.html" class="diretorios">Sobre</a></li>
                 </ol>
               </div>
             </div>
               <!-- page start-->
+              <div class="panel-group m-bot20" id="accordion">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h1 class="panel-title">
+                        <a class="" data-toggle="collapse" href="#">
+                          SUSI - Sistema Unificado de Saúde Informatizado
+                        </a>
+                    </h1>
+                  </div>
+                  <div id="collapseOne" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                      <p>
+                        O sistema visa suprir as necessidades dos servidores dos setores de saúde do Instituto Federal de Educação, Ciência e Tecnologia (do Rio Grande do Norte) que, ao contrário dos outros setores instituição (como Biblioteca, Serviço Social etc.), carecem de um sistema informatizado para organizar as suas informações.
+                      </p>
+
+                      <p>
+                      Nos foi solicitado pela enfermeira do campus Natal - Zona Norte (IFRN) a elaboração de uma forma mais eficiente de gerenciamento de estoque de materiais do setor, pois até o momento é feito o uso de planilhas em MS Excel bastante povoadas, confusas e ineficientes. Também foi citado que é frequente a doação e recebimento de materiais de outros campi, para manter a situação econômica interna da instituição estável de forma que se autoajudasse.
+                      </p>
+
+                      <p>
+                      Diante deste cenário problemático, foi elaborada a ideia de construir um sistema transparente e unificado entre os campi, onde cada um administraria seu próprio estoque mas também divulgaria suas possíveis trocas intercampi. Além disso, a situação dos estoques seria disponível publicamente de forma democrática.
+                      </p>
+
+                      <h3>Licenças</h3>
+
+                      <p>
+                      O sistema está todo sob a licença The MIT License, seja de autoria dos <i>colaboradores</i>ou, no caso dos arquivos em extensão .css que referenciam o framework Bootstrap, da <a href="https://github.com/twbs/bootstrap" class="link-panel-body"><i>Twitter Inc.</i></a>.
+                      </p>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
             <!-- page end-->
           </section>
       </section>
