@@ -110,4 +110,35 @@ class IndicatorsController extends AppController {
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
+
+    private function carencia() {
+        $options = array(
+            'conditions' => array(
+                'Indicator.indicator_type_id' => 1,
+                'Indicator.campus_id' => $this->Auth->user('campus_id')
+            )
+        );
+        $this->Paginator->settings = $options;
+		return $this->Paginator->paginate();
+    }
+    
+    private function excedencia() {
+        $options = array(
+            'conditions' => array(
+                'Indicator.indicator_type_id' => 2,
+                'Indicator.campus_id' => $this->Auth->user('campus_id')
+            )
+        );
+        $this->Paginator->settings = $options;
+		return $this->Paginator->paginate();
+    }
+
+    public function meus_indicadores() {
+        $this->layout = 'userpage';
+        $this->add();
+        $carencia = $this->carencia();
+        $excedencia = $this->excedencia();
+		$this->set('carencia', $carencia);
+		$this->set('excedencia', $excedencia);
+    }
 }
