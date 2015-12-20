@@ -6,7 +6,7 @@
     <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
     <meta name="author" content="GeeksLabs">
     <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
-    <link rel="shortcut icon" href="../img/favicon.png">
+    <link rel="shortcut icon" href="img/favicon.png">
 
     <title>Relatórios | SUSI</title>
 
@@ -41,8 +41,8 @@
                 <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
             </div>
 
-             <!--logo start-->
-            <a href="index.html" class="logo">SUSI</a>
+            <!--logo start-->
+            <a href="relatorios_nouser.html" class="logo">SUSI</a>
             <!--logo end-->
 
 
@@ -58,54 +58,21 @@
                 <!--  search form end -->                
             </div>
 
+
             <div class="top-nav notification-row">
                 <!-- notificatoin dropdown start-->
                 <ul class="nav pull-right top-menu">
-
-                    <!-- task notificatoin end -->
-                    <!-- inbox notificatoin start-->
-                    <li id="mail_notificatoin_bar" class="dropdown" >
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <i class="icon-envelope-l"></i>
-                            <!--<span class="badge bg-important">1</span>-->
-                        </a>
-                        <ul class="dropdown-menu extended inbox">
-                          <!--<div class="notify-arrow notify-arrow-blue"></div>
-                            <li>
-                                <p class="blue">Você tem novas mensagens</p>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="photo"><img alt="avatar" src="./img/avatar-mini4.jpg"></span>
-                                    <span class="subject">
-                                    <span class="from">IFRN - SGA</span>
-                                    <span class="time">1 dia</span>
-                                    </span>
-                                    <span>
-                                        Preciso de dipirona.
-                                    </span>
-                                </a>
-                            </li>-->
-                            <li>
-                                <a href="#">Ver todas as mensagens</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- alert notification end-->
                     <!-- user login dropdown start-->
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <span class="profile-ava">
-                                <img alt="" src="" id="foto_perfil">
+                                <img alt="" src="../img/nouser.jpg" id="foto_perfil">
                             </span>
-                            <span class="username"></span> <!--nome do usuário-->
+                            <span class="username">Usuário Comum</span>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended">
                             <div class="log-arrow-up"></div>
-                            <li class="eborder-top">
-                                <a href="#"><i class="icon_profile"></i> Perfil</a>
-                            </li>
                             <li class="eborder-top">
                                 <a href="../login.html"><i class="icon_key_alt"></i> Sair</a>
                             </li>
@@ -124,32 +91,18 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu">
                   <li class="">
-                      <a class="" href="index.html">
+                      <a class="" href="relatorios_nouser.html">
                           <i class="icon_house_alt"></i>
                           <span>Início</span>
                       </a>
                   </li>
 
                   <li class="sub-menu">
-                      <a href="cadastrar_usuarios.html" class="">
-                          <i class="fa fa-plus-square-o"></i>
-                          <span>Cadastrar Usuários</span>
-                      </a>
-                  </li>
-
-                  <li class="sub-menu">
-                      <a href="relatorios_adm.html" class="">
+                      <a href="relatorios.html" class="">
                           <i class="fa fa-file-text-o"></i>
                           <span>Relatórios</span>
                       </a>
                   </li>
-                  
-                  <!--<li class="sub-menu">
-                      <a href="#" class="">
-                          <i class="fa fa-hdd-o"></i>
-                          <span>Backup de dados</span>
-                      </a>
-                  </li>-->
 
                   <li class="sidebar-menu">
                       <a class="" href="sobre.html">
@@ -171,11 +124,79 @@
               <div class="col-lg-12">
                 <ol class="breadcrumb">
                   <li><i class="fa fa-home"></i><a href="#" class="diretorios">Início</a></li>
-                  <li><i class="fa fa-file-text"></i><a href="relatorios_adm.html" class="diretorios">Relatórios</a></li>
+                  <li><i class="fa fa-file-text"></i><a href="relatorios.html" class="diretorios">Relatórios</a></li>
                 </ol>
               </div>
             </div>
               <!-- page start-->
+              <div class="row">
+                <div class="col-lg-5">
+                  <section class="panel">
+                    <header class="panel-heading">
+                      Gerador de relatórios por campus
+                    </header>
+                          
+                    <div class="panel-body">
+                      <div class="form">
+                        <form class="form-inline" id="feedback_form" role="form">
+                        <label class="control-label espacamento" for="">Campus:</label>
+                          <div class="form-group">
+                              <div class="col-lg-8">
+                              <select class="form-control espacamento"> 
+                                <option>Apodi</option>
+                                <option>Caicó</option>
+                                <option>Canguaretama</option>
+                                <option>Ceará-Mirim</option>
+                                <option>Currais Novos</option>
+                                <option>Ipanguaçu</option>
+                                <option>João Câmara</option>
+                                <option>Lajes</option>
+                                <option>Macau</option>
+                                <option>Mossoró</option>
+                                <option>Natal - Central</option>
+                                <option>Natal - Cidade Alta</option>
+                                <option>Natal - Zona Norte</option>
+                                <option>Nova Cruz</option>
+                                <option>Parelhas</option>
+                                <option>Pau dos Ferros</option>
+                                <option>Santa Cruz</option>
+                                <option>São Gonçalo do Amarante</option>
+                                <option>São Paulo do Potengi</option>
+                              </select>
+                            </div>
+                            <div>
+                              <button type="submit" class="btn btn-primary espacamento">Gerar</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+
+                <div class="col-lg-7">
+                      <section class="panel">
+                          <header class="panel-heading">
+                              Gerador de relatórios por período
+                          </header>
+                          <div class="panel-body">
+                              <form class="form-inline"  id="feedback_form" role="form">
+                                <label class="control-label espacamento" for="">Data inicial:</label>
+                                <div class="form-group espacamento">
+                                  <input id="data_inicial" type="text" placeholder="ex.: 20-12-2015" size="14" class="form-control">
+                                </div>
+
+                                <label class="control-label espacamento" for="">Data Final:</label>
+                                <div class="form-group espacamento">
+                                  <input id="data_final" type="text" placeholder="ex.: 23-01-2016" size="14" class="form-control">
+                                </div>  
+                                  
+                                <button type="submit" class="btn btn-primary espacamento">Gerar</button>       
+                              </form>
+                          </div>
+                      </section>
+                  </div>
+              </div>
             <!-- page end-->
           </section>
       </section>
