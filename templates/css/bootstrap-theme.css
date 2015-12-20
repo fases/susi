@@ -711,7 +711,7 @@ pre code {
 .col-xs-10,
 .col-xs-11,
 .col-xs-12,
-.col-sm-1,
+.col-s151,
 .col-sm-2,
 .col-sm-3,
 .col-sm-4,
@@ -5939,4 +5939,8 @@ td.visible-print {
 
 .link-panel-body:hover {
   color: #0C6;
+}
+
+.espacamento {
+  margin-left: 10px;
 }
