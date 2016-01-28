@@ -5942,5 +5942,6 @@ td.visible-print {
 }
 
 .espacamento {
+  position: relative;
   margin-left: 10px;
 }
