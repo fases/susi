@@ -17,20 +17,12 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 CREATE SCHEMA IF NOT EXISTS `susi` DEFAULT CHARACTER SET utf8 ;
 USE `susi` ;
 
--- -----------------------------------------------------
--- Table `susi`.`item_types`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `susi`.`item_types` ;
-
-CREATE TABLE IF NOT EXISTS `susi`.`item_types` (
-  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB;
-
 
 -- -----------------------------------------------------
 -- Table `susi`.`items`
+-- OBS: excluir itens = apenas alterar visibilidade
+-- Mostrar itens na busca = todos os itens com visibilidade 1
+-- Mostrar itens no relatório = todos
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `susi`.`items` ;
 
@@ -38,14 +30,8 @@ CREATE TABLE IF NOT EXISTS `susi`.`items` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   `description` VARCHAR(150) NULL,
-  `item_type_id` INT UNSIGNED NOT NULL,
-  PRIMARY KEY (`id`),
-  INDEX `fk_items_item_types_idx` (`item_type_id` ASC),
-  CONSTRAINT `fk_items_item_types`
-    FOREIGN KEY (`item_type_id`)
-    REFERENCES `susi`.`item_types` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  `item_visibility` INT UNSIGNED NOT NULL,
+  PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
 
