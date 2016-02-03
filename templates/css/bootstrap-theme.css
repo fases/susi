@@ -5945,3 +5945,20 @@ td.visible-print {
   position: relative;
   margin-left: 10px;
 }
+
+#titulo_login {
+	font-size: 40px;
+	text-align: center;
+}
+		
+#form-login {
+	background: #ecf0f1;
+}
+		
+#body-login {
+	background-color: #1abc9c;
+}
+		
+.fa-2x {
+	margin-top: -10%;
+}
