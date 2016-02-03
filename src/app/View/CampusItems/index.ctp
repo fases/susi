@@ -6,6 +6,7 @@
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('lot'); ?></th>
 			<th><?php echo $this->Paginator->sort('validity'); ?></th>
+			<th><?php echo $this->Paginator->sort('visibility'); ?></th>
 			<th><?php echo $this->Paginator->sort('item_id'); ?></th>
 			<th><?php echo $this->Paginator->sort('user_id'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
@@ -17,6 +18,7 @@
 		<td><?php echo h($campusItem['CampusItem']['id']); ?>&nbsp;</td>
 		<td><?php echo h($campusItem['CampusItem']['lot']); ?>&nbsp;</td>
 		<td><?php echo h($campusItem['CampusItem']['validity']); ?>&nbsp;</td>
+		<td><?php echo h($campusItem['CampusItem']['visibility']); ?>&nbsp;</td>
 		<td>
 			<?php echo $this->Html->link($campusItem['Item']['name'], array('controller' => 'items', 'action' => 'view', $campusItem['Item']['id'])); ?>
 		</td>
@@ -54,6 +56,8 @@
 		<li><?php echo $this->Html->link(__('New Item'), array('controller' => 'items', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Users'), array('controller' => 'users', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New User'), array('controller' => 'users', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Campuses'), array('controller' => 'campuses', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Campus'), array('controller' => 'campuses', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Logs'), array('controller' => 'logs', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Log'), array('controller' => 'logs', 'action' => 'add')); ?> </li>
 	</ul>

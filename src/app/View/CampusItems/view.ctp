@@ -16,6 +16,11 @@
 			<?php echo h($campusItem['CampusItem']['validity']); ?>
 			&nbsp;
 		</dd>
+		<dt><?php echo __('Visibility'); ?></dt>
+		<dd>
+			<?php echo h($campusItem['CampusItem']['visibility']); ?>
+			&nbsp;
+		</dd>
 		<dt><?php echo __('Item'); ?></dt>
 		<dd>
 			<?php echo $this->Html->link($campusItem['Item']['name'], array('controller' => 'items', 'action' => 'view', $campusItem['Item']['id'])); ?>
@@ -39,6 +44,8 @@
 		<li><?php echo $this->Html->link(__('New Item'), array('controller' => 'items', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Users'), array('controller' => 'users', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New User'), array('controller' => 'users', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Campuses'), array('controller' => 'campuses', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Campus'), array('controller' => 'campuses', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Logs'), array('controller' => 'logs', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Log'), array('controller' => 'logs', 'action' => 'add')); ?> </li>
 	</ul>
