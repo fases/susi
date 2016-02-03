@@ -48,6 +48,8 @@
     'action' => 'relatorios_susi.html'
 )); ?>
 
+<?php echo $this->Form->end(); ?> 
+
         </div>
 
   </body>
