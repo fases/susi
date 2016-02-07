@@ -5962,3 +5962,7 @@ td.visible-print {
 .fa-2x {
 	margin-top: -10%;
 }
+
+.link-item {
+  color: #000;
+}
