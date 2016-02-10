@@ -5966,3 +5966,7 @@ td.visible-print {
 .link-item {
   color: #000;
 }
+
+.btn-drop {
+  width: 200%;
+}
