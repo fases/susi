@@ -711,7 +711,7 @@ pre code {
 .col-xs-10,
 .col-xs-11,
 .col-xs-12,
-.col-sm-1,
+.col-s151,
 .col-sm-2,
 .col-sm-3,
 .col-sm-4,
@@ -5931,4 +5931,42 @@ td.visible-print {
 
 .remover {
   float: right;
+}
+
+.link-panel-body {
+  color: #06F;
+}
+
+.link-panel-body:hover {
+  color: #0C6;
+}
+
+.espacamento {
+  position: relative;
+  margin-left: 10px;
+}
+
+#titulo_login {
+	font-size: 40px;
+	text-align: center;
+}
+		
+#form-login {
+	background: #ecf0f1;
+}
+		
+#body-login {
+	background-color: #1abc9c;
+}
+		
+.fa-2x {
+	margin-top: -10%;
+}
+
+.link-item {
+  color: #000;
+}
+
+.btn-drop {
+  width: 200%;
 }
