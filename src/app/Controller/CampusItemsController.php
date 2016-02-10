@@ -23,7 +23,11 @@ class CampusItemsController extends AppController {
     public function index() {
         $this->recursive = 0;
         $this->Paginator->settings = array(
-            'conditions' => array('Campus.id' => $this->Auth->user('campus_id')));
+            'conditions' => array(
+                'Campus.id' => $this->Auth->user('campus_id'),
+                'CampusItem.visibility' => 1
+            )
+        );
         $this->set('campusItems', $this->Paginator->paginate());
     }
 
@@ -116,7 +120,8 @@ class CampusItemsController extends AppController {
         $this->Paginator->settings = array(
             'conditions' => array(
                 'Campus.id' => $this->Auth->user('campus_id'),
-                'CampusItem.validity <' => date('Y-m-d', strtotime('now'))
+                'CampusItem.validity <' => date('Y-m-d', strtotime('now')),
+                'CampusItem.visibility' => 1
             )
         );
         return $this->Paginator->paginate();
@@ -127,7 +132,8 @@ class CampusItemsController extends AppController {
             'conditions' => array(
                 'Campus.id' => $this->Auth->user('campus_id'),
                 'CampusItem.validity <=' => date('Y-m-d', strtotime('+1 month')),
-                'CampusItem.validity >' => date('Y-m-d', strtotime('now'))
+                'CampusItem.validity >' => date('Y-m-d', strtotime('now')),
+                'CampusItem.visibility' => 1
             )
         );
         return $this->Paginator->paginate();
@@ -140,5 +146,19 @@ class CampusItemsController extends AppController {
         $almostExpireds = $this->almostExpireds();
         $this->set('expireds', $expireds);
         $this->set('almostExpireds', $almostExpireds);
+    }
+
+    public function estoque() {
+        $this->layout = 'userpage';
+        $this->recursive = 0;
+
+        $this->Paginator->settings = array(
+            'conditions' => array(
+                'Campus.id' => $this->Auth->user('campus_id'),
+                'CampusItem.visibility' => 1
+            )
+        );
+
+        $this->set('items', $this->Paginator->paginate());
     }
 }
