@@ -72,7 +72,12 @@ class CampusItem extends AppModel {
         'Campus' => array(
             'className'  => 'Campus',
             'foreignKey' => false,
-            'conditions' => 'Campus.id = User.campus_id',
+            'conditions' => 'Campus.id = User.campus_id'
+        ),
+        'ItemType' => array(
+            'className'  => 'ItemType',
+            'foreignKey' => false,
+            'conditions' => 'ItemType.id = Item.item_type_id'
         )
     );
 

@@ -114,6 +114,19 @@ class CampusItemsController extends AppController {
         return $this->redirect(array('action' => 'index'));
     }
 
+    // O delete() remove o item completamente do banco de dados.  Já o
+    // remove() mantém o item e define seu campo visibility com valor 0,
+    // para que fique disponível no relatório, mas seja ignorado em
+    // outras consultas.
+    public function remove($id = null) {
+        $this->CampusItem->id = $id;
+        if (!$this->CampusItem->exists()) {
+            throw new NotFoundException(__('Invalid campus item'));
+        }
+        $this->CampusItem->saveField('visibility', 0);
+        return $this->redirect(array('action' => 'estoque'));
+    }
+
     private function expireds() {
         $this->layout = 'userpage';
         $this->recursive = 0;
