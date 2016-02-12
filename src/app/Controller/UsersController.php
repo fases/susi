@@ -48,6 +48,7 @@ class UsersController extends AppController {
  * @return void
  */
 	public function add() {
+        $this->layout = 'userpage';
 		if ($this->request->is('post')) {
 			$this->User->create();
 			if ($this->User->save($this->request->data)) {

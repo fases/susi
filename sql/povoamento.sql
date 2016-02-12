@@ -25,13 +25,9 @@ INSERT INTO campuses(name) VALUES ('São Gonçalo do Amarante');
 INSERT INTO campuses(name) VALUES ('São Paulo do Potengi');
 
 # Povoamento dos tipos de usuário
+INSERT INTO user_types(name) VALUES ('Médico');
+INSERT INTO user_types(name) VALUES ('Enfermeira');
 INSERT INTO user_types(name) VALUES ('Administrador');
-
-# Povoamento dos tipos de utilizações dos itens
-INSERT INTO deal_types(name) VALUES ('Consumo');
-INSERT INTO deal_types(name) VALUES ('Deterioração');
-INSERT INTO deal_types(name) VALUES ('Doação');
-INSERT INTO deal_types(name) VALUES ('Aquisição');
 
 # Povoamento dos tipos de indicadores
 INSERT INTO indicator_types(name) VALUES ('Carência');
