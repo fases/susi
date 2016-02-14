@@ -101,12 +101,7 @@
                   <a href="#"><i class="icon_profile"></i> Perfil</a>
                 </li>
                 <li class="eborder-top">
-
-<?php echo $this->Html->link($this->Html->tag('i', '', array('class' => 'icon_key_alt')) . 'Sair',
-    array( 'controller' => 'users',
-    'action' => 'logout'),
-    array('escape' => false)); ?> 
-
+                  <a href="../login.html"><i class="icon_key_alt"></i> Sair</a>
                 </li>
               </ul>
             </li>

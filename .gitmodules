@@ -1,3 +1,0 @@
-[submodule "src/app/Plugin/acl_extras"]
-	path = src/app/Plugin/acl_extras
-	url = https://github.com/markstory/acl_extras.git
