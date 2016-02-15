@@ -126,9 +126,7 @@
 
                 <?php echo $this->Form->button('Cadastrar', array(
                 'type' => 'submit',
-                'class' => 'btn btn-primary',
-                'controller' => 'users',
-                'action' => 'login')); ?>
+                'class' => 'btn btn-primary')); ?>
 
                 <button class="btn btn-default" type="button">Cancelar</button>
 
