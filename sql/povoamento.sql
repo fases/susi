@@ -32,3 +32,8 @@ INSERT INTO user_types(name) VALUES ('Administrador');
 # Povoamento dos tipos de indicadores
 INSERT INTO indicator_types(name) VALUES ('Carência');
 INSERT INTO indicator_types(name) VALUES ('Excedência');
+
+# Povoamento dos tipos de itens
+INSERT INTO user_types(name) VALUES ('Medicamento');
+INSERT INTO user_types(name) VALUES ('Equipamento');
+INSERT INTO user_types(name) VALUES ('Outros');
