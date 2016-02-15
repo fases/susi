@@ -52,8 +52,11 @@ class CampusItemsController extends AppController {
      * @return void
      */
     public function add() {
+        $this->layout = 'userpage';
         if ($this->request->is('post')) {
             $this->CampusItem->create();
+            // Define o item como pertencente ao usuário da sessão
+            $this->request->data['CampusItem']['user_id'] = $this->Auth->user('id');
             if ($this->CampusItem->save($this->request->data)) {
                 $this->Flash->success(__('The campus item has been saved.'));
                 return $this->redirect(array('action' => 'index'));
