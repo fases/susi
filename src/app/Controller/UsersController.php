@@ -23,6 +23,7 @@ class UsersController extends AppController {
  * @return void
  */
 	public function index() {
+        $this->layout = 'admpage';
 		$this->User->recursive = 0;
 		$this->set('users', $this->Paginator->paginate());
 	}
