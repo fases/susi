@@ -77,6 +77,7 @@ class CampusItemsController extends AppController {
      * @return void
      */
     public function edit($id = null) {
+        $this->layout = 'userpage';
         if (!$this->CampusItem->exists($id)) {
             throw new NotFoundException(__('Invalid campus item'));
         }
