@@ -72,6 +72,7 @@ class UsersController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
+        $this->layout = 'admpage';
 		if (!$this->User->exists($id)) {
 			throw new NotFoundException(__('Invalid user'));
 		}
