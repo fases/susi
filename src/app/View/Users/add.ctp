@@ -129,12 +129,11 @@
                 'class' => 'btn btn-primary')); ?>
 
                 <button class="btn btn-default" type="button">Cancelar</button>
-
-                <?php echo $this->Form->end(); ?> 
-
               </div>
             </div>
-            </form>
+
+            <?php echo $this->Form->end(); ?> 
+
           </div>
 
         </div>
