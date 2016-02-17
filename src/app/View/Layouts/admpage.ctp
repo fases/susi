@@ -6,23 +6,23 @@
       <?php echo $this->fetch('title'); ?>
     </title>
     <?php
-    echo $this->Html->meta('icon');
+      echo $this->Html->meta('icon');
 
-    echo $this->Html->css('bootstrap.min');
-    echo $this->Html->css('bootstrap-theme');
+      echo $this->Html->css('bootstrap.min');
+      echo $this->Html->css('bootstrap-theme');
 
-    //font icon
-    echo $this->Html->css('elegant-icons-style.css');
-    echo $this->Html->css('font-awesome');
+      //font icon
+      echo $this->Html->css('elegant-icons-style.css');
+      echo $this->Html->css('font-awesome');
 
-    //Custom styles
-    echo $this->Html->css('style');
-    echo $this->Html->css('style-responsive');
+      //Custom styles
+      echo $this->Html->css('style');
+      echo $this->Html->css('style-responsive');
 
-    echo $this->fetch('meta');
-    echo $this->fetch('css');
-    echo $this->fetch('script');
-    ?>
+      echo $this->fetch('meta');
+      echo $this->fetch('css');
+      echo $this->fetch('script');
+      ?>
   </head>
 
   <body>
@@ -101,7 +101,12 @@
                   <a href="#"><i class="icon_profile"></i> Perfil</a>
                 </li>
                 <li class="eborder-top">
-                  <a href="../login.html"><i class="icon_key_alt"></i> Sair</a>
+
+                  <?php echo $this->Html->link($this->Html->tag('i', '', array('class' => 'icon_key_alt')) . 'Sair',
+                  array( 'controller' => 'users',
+                  'action' => 'logout'),
+                  array('escape' => false)); ?> 
+
                 </li>
               </ul>
             </li>
@@ -118,31 +123,35 @@
           <!-- sidebar menu start-->
           <ul class="sidebar-menu">
             <li class="">
-              <a class="" href="index.html">
-                <i class="icon_house_alt"></i>
-                <span>Início</span>
-              </a>
+
+              <?php echo $this->Html->link($this->Html->tag('i', '', array('class' => 'icon_house_alt')) . '<span>Início</span>',
+              array('action' => 'index'),
+              array('escape' => false)); ?>
+
             </li>
 
             <li class="sidebar-menu">
-              <a href="javascript:;" class="usuarios.html">
-                <i class="fa fa-archive"></i>
-                <span>Usuários</span>
-              </a>
+
+              <?php echo $this->Html->link($this->Html->tag('i', '', array('class' => 'fa fa-archive')) . '<span>Usuários</span>',
+              array('action' => 'list'),
+              array('escape' => false)); ?>
+
             </li>
 
             <li class="sub-menu">
-              <a href="cadastrar_usuarios.html" class="">
-                <i class="fa fa-plus-square-o"></i>
-                <span>Cadastrar Usuários</span>
-              </a>
+
+              <?php echo $this->Html->link($this->Html->tag('i', '', array('class' => 'fa fa-plus-square-o')) . '<span>Cadastrar Usuários</span>',
+              array('action' => 'add'),
+              array('escape' => false)); ?>
+
             </li>
 
             <li class="sub-menu">
-              <a href="relatorios.html" class="">
-                <i class="fa fa-file-text-o"></i>
-                <span>Relatórios</span>
-              </a>
+
+              <?php echo $this->Html->link($this->Html->tag('i', '', array('class' => 'fa fa-file-text-o')) . '<span>Relatórios</span>',
+              array('action' => 'logs'),
+              array('escape' => false)); ?>
+
             </li>
 
             <!--<li class="sub-menu">
@@ -153,10 +162,11 @@
               </li>-->
 
               <li class="sidebar-menu">
-                <a class="" href="sobre.html">
-                  <i class="fa fa-question"></i>
-                  <span>Sobre</span>
-                </a>
+
+                <?php echo $this->Html->link($this->Html->tag('i', '', array('class' => 'fa fa-question')) . '<span>Sobre</span>',
+                array('action' => 'sobre'),
+                array('escape' => false)); ?>
+
               </li>
           </ul>
           <!--<img src="img/ifrn_logo.png" id="logo_ifrn"/>-->

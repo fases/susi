@@ -22,11 +22,29 @@ class UsersController extends AppController {
  *
  * @return void
  */
-	public function index() {
+    public function index() {
+        $this->layout = 'admpage';
+    }
+
+    //Listagem de usuários
+    public function list() {
         $this->layout = 'admpage';
 		$this->User->recursive = 0;
+        $this->Paginator->settings = array(
+            'conditions' => array(
+                'User.user_type_id !=' => $this->Auth->user('user_type_id')
+            )
+        );
 		$this->set('users', $this->Paginator->paginate());
 	}
+
+    public function logs() {
+        $this->layout = 'admpage';
+    }
+
+    public function sobre() {
+        $this->layout = 'admpage';
+    }
 
 /**
  * view method
