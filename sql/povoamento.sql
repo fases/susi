@@ -34,6 +34,6 @@ INSERT INTO indicator_types(name) VALUES ('Carência');
 INSERT INTO indicator_types(name) VALUES ('Excedência');
 
 # Povoamento dos tipos de itens
-INSERT INTO user_types(name) VALUES ('Medicamento');
-INSERT INTO user_types(name) VALUES ('Equipamento');
-INSERT INTO user_types(name) VALUES ('Outros');
+INSERT INTO item_types(name) VALUES ('Medicamento');
+INSERT INTO item_types(name) VALUES ('Equipamento');
+INSERT INTO item_types(name) VALUES ('Outros');
