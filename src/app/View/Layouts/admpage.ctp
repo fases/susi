@@ -133,7 +133,8 @@
             <li class="sidebar-menu">
 
               <?php echo $this->Html->link($this->Html->tag('i', '', array('class' => 'fa fa-archive')) . '<span>Usuários</span>',
-              array('action' => 'index'),
+              array('controller' => 'users',
+              'action' => 'index'),
               array('escape' => false)); ?>
 
             </li>
@@ -141,15 +142,8 @@
             <li class="sub-menu">
 
               <?php echo $this->Html->link($this->Html->tag('i', '', array('class' => 'fa fa-plus-square-o')) . '<span>Cadastrar Usuários</span>',
-              array('action' => 'add'),
-              array('escape' => false)); ?>
-
-            </li>
-
-            <li class="sub-menu">
-
-              <?php echo $this->Html->link($this->Html->tag('i', '', array('class' => 'fa fa-file-text-o')) . '<span>Relatórios</span>',
-              array('action' => 'logs'),
+              array('controller' => 'users',
+              'action' => 'add'),
               array('escape' => false)); ?>
 
             </li>
