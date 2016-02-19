@@ -55,4 +55,14 @@ class AppController extends Controller {
     public function beforeFilter() {
         $this->Auth->allow('index', 'view');
     }
+
+    public function beforeRender() {
+        parent::beforeRender();
+        $user_type = $this->Auth->user('user_type_id');
+        if ($user_type == 3) {
+            $this->layout = 'admpage';
+        } else if ($user_type == 1 || $user_type == 2) {
+            $this->layout = 'userpage';
+        }
+    }
 }

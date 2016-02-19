@@ -23,12 +23,10 @@ class UsersController extends AppController {
  * @return void
  */
     public function index() {
-        $this->layout = 'admpage';
     }
 
     //Listagem de usuários
     public function list() {
-        $this->layout = 'admpage';
 		$this->User->recursive = 0;
         $this->Paginator->settings = array(
             'conditions' => array(
@@ -39,11 +37,9 @@ class UsersController extends AppController {
 	}
 
     public function logs() {
-        $this->layout = 'admpage';
     }
 
     public function sobre() {
-        $this->layout = 'admpage';
     }
 
 /**
@@ -67,7 +63,6 @@ class UsersController extends AppController {
  * @return void
  */
 	public function add() {
-        $this->layout = 'admpage';
 		if ($this->request->is('post')) {
 			$this->User->create();
 			if ($this->User->save($this->request->data)) {
@@ -90,7 +85,6 @@ class UsersController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
-        $this->layout = 'admpage';
 		if (!$this->User->exists($id)) {
 			throw new NotFoundException(__('Invalid user'));
 		}

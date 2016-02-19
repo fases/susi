@@ -21,7 +21,6 @@ class IndicatorsController extends AppController {
  * @return void
  */
 	public function index() {
-        $this->layout = 'userpage';
         $this->recursive = 0;
 
         $indicator = function ($type_id) {
@@ -60,7 +59,6 @@ class IndicatorsController extends AppController {
  * @return void
  */
 	public function add() {
-        $this->layout = 'userpage';
 		if ($this->request->is('post')) {
 			$this->Indicator->create();
 			if ($this->Indicator->save($this->request->data)) {
@@ -126,7 +124,6 @@ class IndicatorsController extends AppController {
 	}
 
     public function meus_indicadores() {
-        $this->layout = 'userpage';
         $this->recursive = 0;
         $this->add();
 

@@ -21,7 +21,6 @@ class CampusItemsController extends AppController {
  * @return void
  */
     public function index() {
-        $this->layout = 'userpage';
         $this->recursive = 0;
         $expireds = function () {
             $this->Paginator->settings = array(
@@ -71,7 +70,6 @@ class CampusItemsController extends AppController {
      * @return void
      */
     public function add() {
-        $this->layout = 'userpage';
         if ($this->request->is('post')) {
             $this->CampusItem->create();
             // Define o item como pertencente ao usuário da sessão
@@ -96,7 +94,6 @@ class CampusItemsController extends AppController {
      * @return void
      */
     public function edit($id = null) {
-        $this->layout = 'userpage';
         if (!$this->CampusItem->exists($id)) {
             throw new NotFoundException(__('Invalid campus item'));
         }
@@ -151,7 +148,6 @@ class CampusItemsController extends AppController {
     }
 
     public function estoque() {
-        $this->layout = 'userpage';
         $this->recursive = 0;
 
         $this->Paginator->settings = array(

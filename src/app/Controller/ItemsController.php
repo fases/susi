@@ -46,7 +46,6 @@ class ItemsController extends AppController {
  * @return void
  */
 	public function add() {
-        $this->layout = 'userpage';
 		if ($this->request->is('post')) {
 			$this->Item->create();
 			if ($this->Item->save($this->request->data)) {
