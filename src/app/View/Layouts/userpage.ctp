@@ -39,7 +39,6 @@
         <a href="index.html" class="logo">SUSI</a>
         <!--logo end-->
 
-
         <div class="nav search-row" id="top_menu">
           <!--  search form start -->
           <ul class="nav top-menu">                    
@@ -102,10 +101,10 @@
                 </li>
                 <li class="eborder-top">
 
-<?php echo $this->Html->link($this->Html->tag('i', '', array('class' => 'icon_key_alt')) . 'Sair',
-    array( 'controller' => 'users',
-    'action' => 'logout'),
-    array('escape' => false)); ?> 
+                  <?php echo $this->Html->link($this->Html->tag('i', '', array('class' => 'icon_key_alt')) . 'Sair',
+                  array( 'controller' => 'users',
+                  'action' => 'logout'),
+                  array('escape' => false)); ?> 
 
                 </li>
               </ul>
@@ -123,24 +122,27 @@
           <!-- sidebar menu start-->
           <ul class="sidebar-menu">
             <li class="sidebar-menu">
-              <a class="" href="index.html">
-                <i class="icon_house_alt"></i>
-                <span>Início</span>
-              </a>
+
+              <?php echo $this->Html->link($this->Html->tag('i', '', array('class' => 'icon_house_alt')) . '<span>Início</span>',
+              array('controller' => 'campusItems', 'action' => 'index'),
+              array('escape' => false)); ?>
+
             </li>
 
             <li class="sidebar-menu">
-              <a href="javascript:;" class="">
-                <i class="fa fa-archive"></i>
-                <span>Estoque</span>
-              </a>
+
+              <?php echo $this->Html->link($this->Html->tag('i', '', array('class' => 'fa fa-archive')) . '<span>Estoque</span>',
+              array('controller' => 'campusItems', 'action' => 'estoque'),
+              array('escape' => false)); ?>
+
             </li>
 
             <li class="sidebar-menu">
-              <a href="cadastrar_itens.html" class="">
-                <i class="fa fa-plus-square-o"></i>
-                <span>Cadastrar Itens</span>
-              </a>
+
+              <?php echo $this->Html->link($this->Html->tag('i', '', array('class' => 'fa fa-plus-square-o')) . '<span>Cadastrar Itens</span>',
+              array('controller' => 'campusItems', 'action' => 'add'),
+              array('escape' => false)); ?>
+
             </li>
 
             <li class="sidebar-menu">
@@ -152,17 +154,19 @@
             </li>
 
             <li class="sidebar-menu">
-              <a class="" href="meus_indicadores.html">
-                <i class="fa fa-eye"></i>
-                <span>Meus indicadores</span>
-              </a>
+
+              <?php echo $this->Html->link($this->Html->tag('i', '', array('class' => 'fa fa-eye')) . '<span>Meus Indicadores</span>',
+              array('controller' => 'indicators', 'action' => 'meus_indicadores'),
+              array('escape' => false)); ?>
+
             </li>
 
             <li class="sidebar-menu">
-              <a class="" href="ver_indicadores.html">
-                <i class="fa fa-rss"></i>
-                <span>Ver indicadores</span>
-              </a>
+
+              <?php echo $this->Html->link($this->Html->tag('i', '', array('class' => 'fa fa-rss')) . '<span>Ver Indicadores</span>',
+              array('controller' => 'indicators', 'action' => 'index'),
+              array('escape' => false)); ?>
+
             </li>
 
             <li class="sidebar-menu">
