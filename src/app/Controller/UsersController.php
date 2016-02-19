@@ -23,23 +23,13 @@ class UsersController extends AppController {
  * @return void
  */
     public function index() {
-    }
-
-    //Listagem de usuários
-    public function list() {
-		$this->User->recursive = 0;
+        $this->User->recursive = 0;
         $this->Paginator->settings = array(
             'conditions' => array(
                 'User.user_type_id !=' => $this->Auth->user('user_type_id')
             )
         );
-		$this->set('users', $this->Paginator->paginate());
-	}
-
-    public function logs() {
-    }
-
-    public function sobre() {
+        $this->set('users', $this->Paginator->paginate());
     }
 
 /**
