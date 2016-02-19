@@ -133,7 +133,7 @@
             <li class="sidebar-menu">
 
               <?php echo $this->Html->link($this->Html->tag('i', '', array('class' => 'fa fa-archive')) . '<span>Usuários</span>',
-              array('action' => 'list'),
+              array('action' => 'index'),
               array('escape' => false)); ?>
 
             </li>

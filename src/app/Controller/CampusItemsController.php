@@ -21,16 +21,17 @@ class CampusItemsController extends AppController {
  * @return void
  */
     public function index() {
+        $this->layout = 'userpage';
         $this->recursive = 0;
-        $this->Paginator->settings = array(
-            'conditions' => array(
-                'Campus.id' => $this->Auth->user('campus_id'),
-                'CampusItem.visibility' => 1
-            )
-        );
-        $this->set('campusItems', $this->Paginator->paginate());
+        $expireds = $this->expireds();
+        $almostExpireds = $this->almostExpireds();
+        $this->set('expireds', $expireds);
+        $this->set('almostExpireds', $almostExpireds);
     }
 
+    public function sobre() {
+        $this->layout = 'userpage';
+    }
     /**
      * view method
      *
@@ -154,15 +155,6 @@ class CampusItemsController extends AppController {
             )
         );
         return $this->Paginator->paginate();
-    }
-
-    public function show() {
-        $this->layout = 'userpage';
-        $this->recursive = 0;
-        $expireds = $this->expireds();
-        $almostExpireds = $this->almostExpireds();
-        $this->set('expireds', $expireds);
-        $this->set('almostExpireds', $almostExpireds);
     }
 
     public function estoque() {
