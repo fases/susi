@@ -21,9 +21,23 @@ class IndicatorsController extends AppController {
  * @return void
  */
 	public function index() {
-		$this->Indicator->recursive = 0;
-		$this->set('indicators', $this->Paginator->paginate());
-	}
+        $this->layout = 'userpage';
+        $this->recursive = 0;
+
+        $indicator = function ($type_id) {
+            $options = array(
+                'conditions' => array(
+                    'Indicator.indicator_type_id' => $type_id,
+                    'Indicator.campus_id !=' => $this->Auth->user('campus_id')
+                )
+            );
+            $this->Paginator->settings = $options;
+            return $this->Paginator->paginate();
+        };
+
+        $this->set('carencia', $indicator(1));
+        $this->set('excedencia', $indicator(2));
+    }
 
 /**
  * view method
@@ -111,34 +125,23 @@ class IndicatorsController extends AppController {
 		return $this->redirect(array('action' => 'index'));
 	}
 
-    private function carencia() {
-        $options = array(
-            'conditions' => array(
-                'Indicator.indicator_type_id' => 1,
-                'Indicator.campus_id' => $this->Auth->user('campus_id')
-            )
-        );
-        $this->Paginator->settings = $options;
-		return $this->Paginator->paginate();
-    }
-    
-    private function excedencia() {
-        $options = array(
-            'conditions' => array(
-                'Indicator.indicator_type_id' => 2,
-                'Indicator.campus_id' => $this->Auth->user('campus_id')
-            )
-        );
-        $this->Paginator->settings = $options;
-		return $this->Paginator->paginate();
-    }
-
     public function meus_indicadores() {
         $this->layout = 'userpage';
+        $this->recursive = 0;
         $this->add();
-        $carencia = $this->carencia();
-        $excedencia = $this->excedencia();
-		$this->set('carencia', $carencia);
-		$this->set('excedencia', $excedencia);
+
+        $indicator = function ($type_id) {
+            $options = array(
+                'conditions' => array(
+                    'Indicator.indicator_type_id' => $type_id,
+                    'Indicator.campus_id' => $this->Auth->user('campus_id')
+                )
+            );
+            $this->Paginator->settings = $options;
+            return $this->Paginator->paginate();
+        };
+
+        $this->set('carencia', $indicator(1));
+        $this->set('excedencia', $indicator(2));
     }
 }
