@@ -23,15 +23,33 @@ class CampusItemsController extends AppController {
     public function index() {
         $this->layout = 'userpage';
         $this->recursive = 0;
-        $expireds = $this->expireds();
-        $almostExpireds = $this->almostExpireds();
-        $this->set('expireds', $expireds);
-        $this->set('almostExpireds', $almostExpireds);
+        $expireds = function () {
+            $this->Paginator->settings = array(
+                'conditions' => array(
+                    'Campus.id' => $this->Auth->user('campus_id'),
+                    'CampusItem.validity <' => date('Y-m-d', strtotime('now')),
+                    'CampusItem.visibility' => 1
+                )
+            );
+            return $this->Paginator->paginate();
+        };
+
+        $almostExpireds = function () {
+            $this->Paginator->settings = array(
+                'conditions' => array(
+                    'Campus.id' => $this->Auth->user('campus_id'),
+                    'CampusItem.validity <=' => date('Y-m-d', strtotime('+1 month')),
+                    'CampusItem.validity >' => date('Y-m-d', strtotime('now')),
+                    'CampusItem.visibility' => 1
+                )
+            );
+            return $this->Paginator->paginate();
+        };
+
+        $this->set('expireds', $expireds());
+        $this->set('almostExpireds', $almostExpireds());
     }
 
-    public function sobre() {
-        $this->layout = 'userpage';
-    }
     /**
      * view method
      *
@@ -130,31 +148,6 @@ class CampusItemsController extends AppController {
         }
         $this->CampusItem->saveField('visibility', 0);
         return $this->redirect(array('action' => 'estoque'));
-    }
-
-    private function expireds() {
-        $this->layout = 'userpage';
-        $this->recursive = 0;
-        $this->Paginator->settings = array(
-            'conditions' => array(
-                'Campus.id' => $this->Auth->user('campus_id'),
-                'CampusItem.validity <' => date('Y-m-d', strtotime('now')),
-                'CampusItem.visibility' => 1
-            )
-        );
-        return $this->Paginator->paginate();
-    }
-
-    private function almostExpireds() {
-        $this->Paginator->settings = array(
-            'conditions' => array(
-                'Campus.id' => $this->Auth->user('campus_id'),
-                'CampusItem.validity <=' => date('Y-m-d', strtotime('+1 month')),
-                'CampusItem.validity >' => date('Y-m-d', strtotime('now')),
-                'CampusItem.visibility' => 1
-            )
-        );
-        return $this->Paginator->paginate();
     }
 
     public function estoque() {
