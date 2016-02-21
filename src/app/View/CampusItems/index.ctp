@@ -60,9 +60,7 @@
           <?php foreach ($almostExpireds as $almostExpired): ?>
           <tr class="danger">
             <td><?php echo h($almostExpired['CampusItem']['id']); ?>&nbsp;</td>
-            <td>
-              <?php echo $this->Html->link($almostExpired['Item']['name'], array('controller' => 'items', 'action' => 'view', $almostExpired['Item']['id'])); ?>
-            </td>
+            <td><?php echo h($almostExpired['Item']['name']); ?>&nbsp;</td>
             <td><?php echo h($almostExpired['CampusItem']['lot']); ?>&nbsp;</td>
             <td><?php echo h($almostExpired['CampusItem']['validity']); ?>&nbsp;</td>
           </tr>
