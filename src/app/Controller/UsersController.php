@@ -26,7 +26,8 @@ class UsersController extends AppController {
         $this->User->recursive = 0;
         $this->Paginator->settings = array(
             'conditions' => array(
-                'User.user_type_id !=' => $this->Auth->user('user_type_id')
+                'User.user_type_id !=' => $this->Auth->user('user_type_id'),
+                'User.visibility' => 1
             )
         );
         $this->set('users', $this->Paginator->paginate());
@@ -112,6 +113,17 @@ class UsersController extends AppController {
 		} else {
 			$this->Flash->error(__('The user could not be deleted. Please, try again.'));
 		}
+        return $this->redirect(array('action' => 'index'));
+    }
+
+    // O delete() remove o usuário completamente do banco de dados.  Já o
+    // remove() mantém o usuário e define seu campo visibility com valor 0, para que seja ignorado durante as consultas.
+    public function remove($id = null) {
+        $this->User->id = $id;
+        if (!$this->User->exists()) {
+            throw new NotFoundException(__('Invalid user'));
+        }
+        $this->User->saveField('visibility', 0);
         return $this->redirect(array('action' => 'index'));
     }
 

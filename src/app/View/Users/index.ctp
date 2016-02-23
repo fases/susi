@@ -38,7 +38,7 @@
                 array('escape' => false, 'class' => 'btn btn-primary')); ?>
 
                 <?php echo $this->Form->postLink($this->Html->tag('i', '', array('class' => 'icon_close_alt2')),
-                array('action' => 'delete', $user['User']['id']),
+                array('action' => 'remove', $user['User']['id']),
                 array('escape' => false, 'class' => 'btn btn-danger'),
                 __('Deseja excluir o usuário %s?', $user['User']['name'])); ?>
 
