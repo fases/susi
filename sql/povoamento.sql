@@ -37,3 +37,7 @@ INSERT INTO indicator_types(name) VALUES ('Excedência');
 INSERT INTO item_types(name) VALUES ('Medicamento');
 INSERT INTO item_types(name) VALUES ('Equipamento');
 INSERT INTO item_types(name) VALUES ('Outros');
+
+# Usuário inicial de acesso
+# Recomendável excluí-lo via banco de dados após terminar de usá-lo.
+INSERT INTO users(name, email, password, cpf, phone, user_type_id, campus_id) VALUES('Admin', 'admin@susi.com', '$2a$10$Liwn8zx3WbOLun.k3r8rouY3vq4u5nfFNNeiXVdPzZZCSGo25RzTC', '123.123.123', '1234-1234', 3, 1);
