@@ -88,13 +88,9 @@
             <div class="form-group ">
               <label for="cpassword" class="control-label col-lg-2">Senha <span class="required">*</span></label>
               <div class="col-lg-10">
-
-                <?php echo $this->Form->input('password', array(
-                'label' => false,
-                'class' => 'form-control',
-                'id' => 'cpassword',
-                'required' => true)); ?> 
-
+                  
+                <input name="data[User][password]" class="form-control" id="cpassword" type="password" value="">
+                  
               </div>
             </div>
 
@@ -115,7 +111,7 @@
               <label for="radio-01 radio-02 radio-03" class="control-label col-lg-2">Tipo<span class="required">*</span></label>
 
               <?php
-              $options = array('1' => 'Médico', '2' => 'Enfermeira', '3' => 'Administrador');
+              $options = array('1' => ' Médico ', '2' => ' Enfermeira ', '3' => ' Administrador ');
               $attributes = array('legend' => false, 'label' => false);
               echo $this->Form->radio('user_type_id', $options, $attributes);
               echo $this->Form->input('id', array('type' => 'hidden'));
