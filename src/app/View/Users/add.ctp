@@ -111,10 +111,11 @@
             </div>
 
             <div class="radios form-group">
-              <label for="radio-01 radio-02 radio-03" class="control-label col-lg-2">Tipo<span class="required">*</span></label>
 
+              <label for="radio-01 radio-02 radio-03" class="control-label col-lg-2">Tipo<span class="required">*</span></label>
+              
               <?php
-              $options = array('1' => 'Médico', '2' => 'Enfermeira', '3' => 'Administrador');
+              $options = array('1' => ' Médico ', '2' => ' Enfermeira ', '3' => ' Administrador ');
               $attributes = array('legend' => false, 'label' => false);
               echo $this->Form->radio('user_type_id', $options, $attributes);
               ?>
