@@ -19,7 +19,8 @@ Baixe os arquivos do repositório para o diretório adequado de execução do PH
 </p>
 <p>
 Usuário: admin@susi.com<br/>
-Senha: susi
+Senha: susi<br/>
+<i>(OBS: este é um usuário para primeira instalação, recomenda-se fortemente mudar esta senha em um ambientede uso real, ou até mesmo eliminar este usuário via banco de dados.)</i>
 </p>
 <p>
 As tecnologias utilizadas para execução foram: XAMPP (isto é, Apache e MySQL), navegadores Chrome e Firefox, tanto em Windows 10 quanto Linux Mint. Para desenvolvimento, foi usado o framework CakePHP no server side e Twitter Bootstrap no front end, sem nenhuma IDE. Todas as tecnologias supracitadas stão em suas últimas versões atuais (estamos em 07/04/16).
