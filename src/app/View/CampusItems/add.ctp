@@ -10,7 +10,28 @@
 
   <!-- page start-->
   <!-- Form validations -->
-
+    <script type="text/javascript">
+        
+        function isValidadeOk(){    
+            var dia = document.getElementById('dataDay').value;
+            var mes = document.getElementById('dataMonth').value - 1; // em js, janeiro=0
+            var ano = document.getElementById('dataYear').value;
+            
+            var dataDigitada = new Date(ano, mes, dia);
+            var dataHoje = new Date();
+            
+            var validadeNaoExpirou = (dataHoje < dataDigitada);
+            
+            if (dataHoje < dataDigitada){
+                // validade digitada não expirou, está válida.
+                return true;
+            } // else:
+            document.getElementById('aviso-data-validade').setAttribute('style', '');
+            return false;
+        }
+        
+    </script>
+    
   <div class="row">
     <div class="col-lg-12">
       <section class="panel">
@@ -23,6 +44,14 @@
           </button>
           <p><i>Obs.: Essa área é voltada para cadastrar apenas os produtos que já tem o seu nome no sistema.</i></p>
         </div>
+        
+        <div class="alert alert-danger fade in" id="aviso-data-validade" style="display: none">
+          <button data-dismiss="alert" class="close close-sm" type="button">
+            <i class="icon-remove"></i>
+          </button>
+          <p><i>Por favor, insira uma data de validade que já não tenha expirado e depois clique novamente em 'Cadastrar'.</i></p>
+        </div>
+          
         <div class="panel-body">
           <div class="form">
 
@@ -56,7 +85,8 @@
             </div>
 
             <div class="form-group ">
-              <label class="control-label col-lg-2" for="data">Data de validade<span class="required">*</span></label>
+              <label class="control-label col-lg-2" for="data">Data de validade<br/>
+                <small>Se o material não tiver validade, apenas ignore os campos de data abaixo.</small></label>
               <div class="col-sm-2">
 
                 <?php echo $this->Form->input('validity', array(
@@ -69,20 +99,10 @@
               </div>
             </div>
 
-            <div class="radios form-group">
-              <label for="radio-01 radio-02 radio-03" class="control-label col-lg-2">Tipo<span class="required">*</span></label>
-              <input name="sample-radio" id="radio-01" value="1" type="radio" checked /> Medicamento
-              <input name="sample-radio" id="radio-02" value="1" type="radio" /> Acessório
-              <input name="sample-radio" id="radio-03" value="1" type="radio" /> Equipamento                    
-            </div>
-
             <div class="form-group">
               <div class="col-lg-offset-2 col-lg-10">
-
-                <?php echo $this->Form->button('Cadastrar',
-                array('type' => 'submit',
-                'class' => 'btn btn-primary')); ?>
-
+                  
+                <button class="btn btn-primary" type="submit" onclick="return isValidadeOk()">Cadastrar</button>
                 <button class="btn btn-default" type="button">Cancelar</button>
               </div>
             </div>
