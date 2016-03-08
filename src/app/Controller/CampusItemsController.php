@@ -159,4 +159,11 @@ class CampusItemsController extends AppController {
 
         $this->set('items', $this->Paginator->paginate());
     }
+
+    public function isAuthorized($user) {
+        if ($this->Auth->user('user_type_id') != 3) {
+            return true;
+        }
+        return parent::isAuthorized($user);
+    }
 }

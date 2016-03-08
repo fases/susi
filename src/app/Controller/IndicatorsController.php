@@ -143,4 +143,11 @@ class IndicatorsController extends AppController {
         $this->set('carencia', $indicator(1));
         $this->set('excedencia', $indicator(2));
     }
+
+    public function isAuthorized($user) {
+        if ($this->Auth->user('user_type_id') != 3) {
+            return true;
+        }
+        return parent::isAuthorized($user);
+    }
 }

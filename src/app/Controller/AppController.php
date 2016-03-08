@@ -34,27 +34,15 @@ class AppController extends Controller {
     public $components = array(
         'Flash',
         'Auth' => array(
-            'loginRedirect' => array(
-                'controller' => 'users',
-                'action' => 'index'
-            ),
-            'logoutRedirect' => array(
-                'controller' => 'users',
-                'action' => 'login',
-                'home'
-            ),
             'authenticate' => array(
                 'Form' => array(
                     'passwordHasher' => 'Blowfish',
                     'fields' => array('username' => 'email')
                 )
-            )
+            ),
+            'authorize' => array('Controller')
         )
     );
-
-    public function beforeFilter() {
-        $this->Auth->allow('index', 'view');
-    }
 
     public function beforeRender() {
         parent::beforeRender();
@@ -64,5 +52,9 @@ class AppController extends Controller {
         } else if ($user_type == 1 || $user_type == 2) {
             $this->layout = 'userpage';
         }
+    }
+
+    public function isAuthorized($user) {
+        return false;
     }
 }

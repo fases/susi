@@ -105,4 +105,12 @@ class ItemsController extends AppController {
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
+
+    public function isAuthorized($user) {
+        if ($this->Auth->user('user_type_id') == 3) {
+            return true;
+        }
+        return parent::isAuthorized($user);
+    }
+}
 }
