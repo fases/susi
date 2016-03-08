@@ -50,18 +50,6 @@
             </div>
 
             <div class="form-group">
-              <label class="control-label col-lg-2" for="inputSuccess">Câmpus</label>
-              <div class="col-lg-4">
-
-                <?php echo $this->Form->input('campus_id', array(
-                'label' => false,
-                'class' => 'form-control m-bot15'
-                )); ?>
-
-              </div>
-            </div>
-
-            <div class="form-group">
               <div class="col-lg-offset-2 col-lg-10">
 
                 <?php $options = array(
