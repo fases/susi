@@ -128,13 +128,19 @@ class UsersController extends AppController {
     }
 
     public function login() {
+        $login = function () {
+            $user_type = $this->Auth->user('user_type_id');
+            if ($user_type == 3) {
+                return $this->redirect(array('controller' => 'users', 'action' => 'index'));
+            } else if ($user_type == 1 || $user_type == 2) {
+                return $this->redirect(array('controller' => 'campusItems', 'action' => 'index'));
+            }
+        };
+        $login();
+
         if ($this->request->is('post')) {
             if ($this->Auth->login()) {
-                if ($this->Auth->user('user_type_id') == 3) {
-                    return $this->redirect(array('controller' => 'users', 'action' => 'index'));
-                } else {
-                    return $this->redirect(array('controller' => 'campusItems', 'action' => 'index'));
-                }
+                $login();
             }
             $this->Flash->error(__('Invalid username or password, try again'));
         }
