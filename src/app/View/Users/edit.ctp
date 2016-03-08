@@ -122,7 +122,7 @@
             <div class="form-group">
               <div class="col-lg-offset-2 col-lg-10">
 
-                <?php echo $this->Form->button('Cadastrar', array(
+                <?php echo $this->Form->button('Salvar', array(
                 'type' => 'submit',
                 'class' => 'btn btn-primary')); ?>
 
