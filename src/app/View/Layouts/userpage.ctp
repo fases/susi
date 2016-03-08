@@ -139,8 +139,16 @@
 
             <li class="sidebar-menu">
 
-              <?php echo $this->Html->link($this->Html->tag('i', '', array('class' => 'fa fa-plus-square-o')) . '<span>Cadastrar Itens</span>',
+              <?php echo $this->Html->link($this->Html->tag('i', '', array('class' => 'fa fa-plus-square-o')) . '<span>Inserir no estoque</span>',
               array('controller' => 'campusItems', 'action' => 'add'),
+              array('escape' => false)); ?>
+
+            </li>
+              
+            <li class="sidebar-menu">
+
+              <?php echo $this->Html->link($this->Html->tag('i', '', array('class' => 'fa fa-plus-square-o')) . '<span>Cadastrar item global</span>',
+              array('controller' => 'items', 'action' => 'add'),
               array('escape' => false)); ?>
 
             </li>
