@@ -65,7 +65,7 @@ class IndicatorsController extends AppController {
             $this->request->data['Indicator']['campus_id'] = $this->Auth->user('campus_id');
 			if ($this->Indicator->save($this->request->data)) {
 				$this->Flash->success(__('The indicator has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'meus_indicadores'));
 			} else {
 				$this->Flash->error(__('The indicator could not be saved. Please, try again.'));
 			}
@@ -90,7 +90,7 @@ class IndicatorsController extends AppController {
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Indicator->save($this->request->data)) {
 				$this->Flash->success(__('The indicator has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'meus_indicadores'));
 			} else {
 				$this->Flash->error(__('The indicator could not be saved. Please, try again.'));
 			}
@@ -122,7 +122,7 @@ class IndicatorsController extends AppController {
 		} else {
 			$this->Flash->error(__('The indicator could not be deleted. Please, try again.'));
 		}
-		return $this->redirect(array('action' => 'index'));
+        return $this->redirect(array('action' => 'meus_indicadores'));
 	}
 
     public function meus_indicadores() {
