@@ -107,7 +107,7 @@ class ItemsController extends AppController {
 	}
 
     public function isAuthorized($user) {
-        if ($this->Auth->user('user_type_id') != 3) {
+        if ($this->Auth->user('user_type_id') == 3) {
             return true;
         }
         return parent::isAuthorized($user);

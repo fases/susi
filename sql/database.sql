@@ -112,7 +112,7 @@ DROP TABLE IF EXISTS `susi`.`campus_items` ;
 
 CREATE TABLE IF NOT EXISTS `susi`.`campus_items` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `lot` INT NOT NULL,
+  `amount` INT NOT NULL,
   `validity` DATE NOT NULL,
   `visibility` TINYINT(1) NOT NULL DEFAULT 1,
   `item_id` INT UNSIGNED NOT NULL,

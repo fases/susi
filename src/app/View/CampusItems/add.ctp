@@ -71,10 +71,10 @@
             </div>
 
             <div class="form-group">
-              <label for="cnumber" class="control-label col-lg-2">Lote<span class="required">*</span></label>
+              <label for="cnumber" class="control-label col-lg-2">Quantidade<span class="required">*</span></label>
               <div class="col-lg-2">
 
-                <?php echo $this->Form->input('lot', array(
+                <?php echo $this->Form->input('amount', array(
                 'label' => false,
                 'class' => 'form-control',
                 'id' => 'cnumber',

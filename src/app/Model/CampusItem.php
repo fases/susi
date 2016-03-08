@@ -15,7 +15,7 @@ class CampusItem extends AppModel {
  * @var array
  */
 	public $validate = array(
-		'lot' => array(
+		'amount' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
