@@ -18,7 +18,7 @@
             <div class="col-lg-7">
                 <section class="panel">
                     <header class="panel-heading">
-                        Lista de global itens
+                        Lista de global itens <strong>(dica: use o atalho Ctrl+F do navegador para encontrar algo mais rápido)</strong>
                     </header>
 
                     <table class="table table-striped table-advance table-hover">

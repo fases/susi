@@ -136,6 +136,15 @@
               array('escape' => false)); ?>
 
             </li>
+              
+              
+            <li class="sidebar-menu">
+
+              <?php echo $this->Html->link($this->Html->tag('i', '', array('class' => 'glyphicon glyphicon-list-alt')) . '<span>Índice global de itens </span>',
+              array('controller' => 'items', 'action' => 'index'),
+              array('escape' => false)); ?>
+
+            </li>
 
             <li class="sidebar-menu">
 
@@ -147,7 +156,7 @@
               
             <li class="sidebar-menu">
 
-              <?php echo $this->Html->link($this->Html->tag('i', '', array('class' => 'fa fa-plus-square-o')) . '<span>Cadastrar item global</span>',
+              <?php echo $this->Html->link($this->Html->tag('i', '', array('class' => 'fa fa-plus-square-o')) . '<span>Cadastrar item global </span>',
               array('controller' => 'items', 'action' => 'add'),
               array('escape' => false)); ?>
 
