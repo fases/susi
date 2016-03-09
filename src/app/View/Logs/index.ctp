@@ -1,3 +1,7 @@
+
+<script>
+    window.location = "campusItems/estoque";
+</script>
 <div class="logs index">
 	<h2><?php echo __('Logs'); ?></h2>
 	<table cellpadding="0" cellspacing="0">
