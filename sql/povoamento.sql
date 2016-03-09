@@ -39,8 +39,8 @@ INSERT INTO item_types(name) VALUES ('Equipamento');
 INSERT INTO item_types(name) VALUES ('Outros');
 
 # Povoamento dos tipos de itens
-INSERT INTO deal_types(name) VALUES ('Adição');
-INSERT INTO deal_types(name) VALUES ('Subtração');
+INSERT INTO deal_types(id, name) VALUES (1, 'Adição');
+INSERT INTO deal_types(id, name) VALUES (2, 'Subtração');
 
 # Usuário inicial de acesso
 # Recomendável excluí-lo via banco de dados após terminar de usá-lo.

@@ -12,7 +12,7 @@
     <div class="col-lg-7">
       <section class="panel">
         <header class="panel-heading">
-          Tabela de itens
+          Lista de itens do estoque
         </header>
 
         <table class="table table-striped table-advance table-hover">
@@ -22,31 +22,31 @@
               <th><i class="icon_calendar"></i> Vencimento</th>
               <th><i class="fa fa-list-alt"></i> Tipo</th>
               <th><i class="fa fa-archive"></i> Quantidade</th>
-              <th><i class="icon_cogs"></i> Editar/Remover</th>
+              <th><i class="icon_cogs"></i> Entrada/Saída</th>
+              <th><i class="icon_cogs"></i> Remover</th>
             </tr>
 
             <?php foreach ($items as $item): ?>
-
             <tr>
-              <td>
-                <?php echo $this->Html->link($item['Item']['name'], array('controller' => 'items', 'action' => 'view', $item['Item']['id'])); ?>
-              </td>
+              <td><?php echo h($item['Item']['name']); ?>&nbsp;</td>
               <td><?php echo h($item['CampusItem']['validity']); ?>&nbsp;</td>
               <td><?php echo h($item['ItemType']['name']); ?>&nbsp;</td>
               <td><?php echo h($item['CampusItem']['amount']); ?>&nbsp;</td>
-              <td>
+              <td class="text-center">
                 <spam class="btn-group">
 
-                <?php echo $this->Html->link($this->Html->tag('i', '', array('class' => 'icon_close_alt2 fa fa-pencil')),
+                <?php echo $this->Html->link($this->Html->tag('i', '', array('class' => 'glyphicon glyphicon-transfer')),
                 array('controller' => 'logs', 'action' => 'add', $item['CampusItem']['id']),
                 array('escape' => false, 'class' => 'btn btn-primary')); ?>
 
+                </spam>
+              </td>
+                
+              <td class="text-center">
                 <?php echo $this->Form->postLink($this->Html->tag('i', '', array('class' => 'icon_close_alt2')),
                 array('action' => 'remove', $item['CampusItem']['id']),
                 array('escape' => false, 'class' => 'btn btn-danger'),
                 __('Deseja excluir o item %s?', $item['CampusItem']['id'])); ?>
-
-                </spam>
               </td>
             </tr>
             <?php endforeach; ?>
