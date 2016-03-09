@@ -32,7 +32,7 @@
               <tr class="danger">
                 <td><?php echo h($expired['CampusItem']['id']); ?>&nbsp;</td>
                 <td><?php echo h($expired['Item']['name']); ?>&nbsp;</td>
-                <td><?php echo h($expired['CampusItem']['lot']); ?>&nbsp;</td>
+                <td><?php echo h($expired['CampusItem']['amount']); ?>&nbsp;</td>
                 <td><?php echo h($expired['CampusItem']['validity']); ?>&nbsp;</td>
               </tr>
               <?php endforeach; ?>
@@ -61,7 +61,7 @@
           <tr class="danger">
             <td><?php echo h($almostExpired['CampusItem']['id']); ?>&nbsp;</td>
             <td><?php echo h($almostExpired['Item']['name']); ?>&nbsp;</td>
-            <td><?php echo h($almostExpired['CampusItem']['lot']); ?>&nbsp;</td>
+            <td><?php echo h($almostExpired['CampusItem']['amount']); ?>&nbsp;</td>
             <td><?php echo h($almostExpired['CampusItem']['validity']); ?>&nbsp;</td>
           </tr>
           <?php endforeach; ?>
