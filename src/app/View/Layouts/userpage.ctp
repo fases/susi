@@ -163,9 +163,9 @@
             </li>
 
             <li class="sidebar-menu">
-              <a href="../user/relatorios_user.html" class="">
+              <a href="../sql/relatorio.php" class="">
                 <i class="fa fa-file-text-o"></i>
-                <span>Relatórios</span>
+                <span>Relatório</span>
               </a>
 
             </li>
