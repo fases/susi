@@ -45,19 +45,35 @@ class LogsController extends AppController {
  *
  * @return void
  */
-	public function add() {
+	public function add($campus_item_id = null) {
+        $this->loadModel('CampusItem');
 		if ($this->request->is('post')) {
 			$this->Log->create();
-			if ($this->Log->save($this->request->data)) {
-				$this->Flash->success(__('The log has been saved.'));
-				return $this->redirect(array('action' => 'index'));
-			} else {
-				$this->Flash->error(__('The log could not be saved. Please, try again.'));
-			}
-		}
-		$campusItems = $this->Log->CampusItem->find('list');
-		$dealTypes = $this->Log->DealType->find('list');
-		$this->set(compact('campusItems', 'dealTypes'));
+            $this->request->data['Log']['campus_item_id'] = $campus_item_id;
+            if ($this->Log->save($this->request->data)) {
+                $this->Flash->success(__('The log has been saved.'));
+
+                $this->loadModel('CampusItem');
+                $amount = (isset($this->data['Log']['amount'])) ? $this->data['Log']['amount'] : null;
+                $oldAmount = $this->CampusItem->findById($campus_item_id)['CampusItem']['amount'];
+
+                if (isset($this->data['Log']['deal_type_id'])) {
+                    if ($this->data['Log']['deal_type_id'] == 0) { //Adição
+                        $this->CampusItem->save(array('id' => $campus_item_id, 'amount' => $oldAmount + $amount));
+                    } else if ($this->data['Log']['deal_type_id'] == 1) { //Subtração
+                        $this->CampusItem->save(array('id' => $campus_item_id, 'amount' => $oldAmount - $amount));
+                    }
+                }
+
+                return $this->redirect(array('action' => 'index'));
+            } else {
+                $this->Flash->error(__('The log could not be saved. Please, try again.'));
+            }
+        }
+        $campusItems = $this->Log->CampusItem->find('list');
+        $dealTypes = $this->Log->DealType->find('list');
+        $campusItem = $this->CampusItem->findById($campus_item_id);
+        $this->set(compact('campusItems', 'dealTypes', 'campusItem'));
 	}
 
 /**

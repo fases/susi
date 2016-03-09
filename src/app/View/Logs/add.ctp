@@ -3,11 +3,12 @@
 	<fieldset>
 		<legend><?php echo __('Add Log'); ?></legend>
 	<?php
-		echo $this->Form->input('moment');
-		echo $this->Form->input('amount');
+        echo $campusItem['Item']['name']; //Exibe o nome do item
+        echo $campusItem['CampusItem']['amount']; //Exibe quantidade de itens
 		echo $this->Form->input('comment');
-		echo $this->Form->input('campus_item_id');
+        //echo $this->Form->input('campus_item_id');
 		echo $this->Form->input('deal_type_id');
+		echo $this->Form->input('amount');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>

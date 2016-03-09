@@ -22,7 +22,7 @@
               <th><i class="icon_calendar"></i> Vencimento</th>
               <th><i class="fa fa-list-alt"></i> Tipo</th>
               <th><i class="fa fa-archive"></i> Quantidade</th>
-              <th><i class="icon_cogs"></i> Remover</th>
+              <th><i class="icon_cogs"></i> Editar/Remover</th>
             </tr>
 
             <?php foreach ($items as $item): ?>
@@ -38,7 +38,7 @@
                 <spam class="btn-group">
 
                 <?php echo $this->Html->link($this->Html->tag('i', '', array('class' => 'icon_close_alt2 fa fa-pencil')),
-                array('action' => 'edit', $item['CampusItem']['id']),
+                array('controller' => 'logs', 'action' => 'add', $item['CampusItem']['id']),
                 array('escape' => false, 'class' => 'btn btn-primary')); ?>
 
                 <?php echo $this->Form->postLink($this->Html->tag('i', '', array('class' => 'icon_close_alt2')),
