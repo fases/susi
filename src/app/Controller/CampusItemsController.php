@@ -160,6 +160,24 @@ class CampusItemsController extends AppController {
         $this->set('items', $this->Paginator->paginate());
     }
 
+    public function search() {
+        $campus = (isset($this->request->data['CampusItem']['campus'])) ? $this->request->data['CampusItem']['campus'] : '';
+        $data_inicial = (isset($this->request->data['CampusItem']['data_inicial'])) ? $this->request->data['CampusItem']['data_inicial'] : '';
+        $data_final = (isset($this->request->data['CampusItem']['data_final'])) ? $this->request->data['CampusItem']['data_final'] : '';
+
+        $this->Paginator->settings = array(
+            'conditions' => array(
+                'Campus.id' => $campus,
+                'CampusItem.validity <=' => $data_final,
+                'CampusItem.validity >' => $data_inicial,
+                'CampusItem.visibility' => 1
+
+            )
+        );
+
+        $this->set('campusItems', $this->Paginator->paginate());
+    }
+
     public function isAuthorized($user) {
         if ($this->Auth->user('user_type_id') != 3) {
             return true;
