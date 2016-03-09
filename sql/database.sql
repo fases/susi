@@ -139,7 +139,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `susi`.`deal_types` ;
 
 CREATE TABLE IF NOT EXISTS `susi`.`deal_types` (
-  `id` INT UNSIGNED NOT NULL,
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;

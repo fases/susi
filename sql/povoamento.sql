@@ -39,9 +39,10 @@ INSERT INTO item_types(name) VALUES ('Equipamento');
 INSERT INTO item_types(name) VALUES ('Outros');
 
 # Povoamento dos tipos de itens
-INSERT INTO item_types(name) VALUES ('Adição');
-INSERT INTO item_types(name) VALUES ('Subtração');
+INSERT INTO deal_types(name) VALUES ('Adição');
+INSERT INTO deal_types(name) VALUES ('Subtração');
 
 # Usuário inicial de acesso
 # Recomendável excluí-lo via banco de dados após terminar de usá-lo.
 INSERT INTO users(name, email, password, cpf, phone, user_type_id, campus_id) VALUES('Admin', 'admin@susi.com', '$2a$10$Liwn8zx3WbOLun.k3r8rouY3vq4u5nfFNNeiXVdPzZZCSGo25RzTC', '123.123.123', '1234-1234', 3, 1);
+INSERT INTO users(name, email, password, cpf, phone, user_type_id, campus_id) VALUES('User', 'user@susi.com', '$2a$10$Liwn8zx3WbOLun.k3r8rouY3vq4u5nfFNNeiXVdPzZZCSGo25RzTC', '423.153.123', '1334-1434', 1, 1);
