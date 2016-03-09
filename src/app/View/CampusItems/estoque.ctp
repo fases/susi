@@ -33,7 +33,7 @@
               </td>
               <td><?php echo h($item['CampusItem']['validity']); ?>&nbsp;</td>
               <td><?php echo h($item['ItemType']['name']); ?>&nbsp;</td>
-              <td><?php echo h($item['CampusItem']['lot']); ?>&nbsp;</td>
+              <td><?php echo h($item['CampusItem']['amount']); ?>&nbsp;</td>
               <td>
                 <spam class="btn-group">
                 <?php echo $this->Html->link($this->Html->tag('i', '', array('class' => 'icon_close_alt2')),
