@@ -36,10 +36,16 @@
               <td><?php echo h($item['CampusItem']['amount']); ?>&nbsp;</td>
               <td>
                 <spam class="btn-group">
-                <?php echo $this->Html->link($this->Html->tag('i', '', array('class' => 'icon_close_alt2')),
+
+                <?php echo $this->Html->link($this->Html->tag('i', '', array('class' => 'icon_close_alt2 fa fa-pencil')),
+                array('action' => 'edit', $item['CampusItem']['id']),
+                array('escape' => false, 'class' => 'btn btn-primary')); ?>
+
+                <?php echo $this->Form->postLink($this->Html->tag('i', '', array('class' => 'icon_close_alt2')),
                 array('action' => 'remove', $item['CampusItem']['id']),
-                array('escape' => false, 'class' => 'btn btn-danger btn-drop'),
-                array('confirm' => __('Are you sure you want to delete # s?', $item['CampusItem']['id']))); ?>
+                array('escape' => false, 'class' => 'btn btn-danger'),
+                __('Deseja excluir o item %s?', $item['CampusItem']['id'])); ?>
+
                 </spam>
               </td>
             </tr>
